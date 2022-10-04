@@ -1,10 +1,10 @@
 # VL.Devices.uEye
-VL nodes for using uEye cameras by [IDS-Imaging](https://en.ids-imaging.com).
 
+VL nodes for using uEye cameras by [IDS-Imaging](https://en.ids-imaging.com).
 
 ## Install 
 
-**1.** You need to **install the uEye Drivers** [64 Bit](https://en.ids-imaging.com/download-ueye-win64.html) or [32 Bit](https://en.ids-imaging.com/download-ueye-win32.html) to make this work. latest version is based on 4.93
+**1.** You need to have the IDS Software Suite installed for this to work. The current version has been compiled against version `4.96.1`, which internally uses `uEyeDotNet.dll` version `2.0.1.0`. To download the IDS Software Suite, you must first get an account on IDS' website, search for your camera and look for the Software Suite in its _Downloads_ section.
 
 **2.** Open VL, go to 
 
