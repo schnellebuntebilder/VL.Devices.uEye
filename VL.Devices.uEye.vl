@@ -9461,7 +9461,7 @@
               <Pin Id="AgWhhDATBSmOEKm5xtO7Va" Name="max Pixelclock" Kind="OutputPin" />
               <Pin Id="Gy9Phh0SBQNLJGuLJxbM9r" Name="possible Values" Kind="OutputPin" />
             </Patch>
-            <Patch Id="QzdoF8xceYINU3buahhRcr" Name="ApplyFeature" ParticipatingElements="MUOfg8Tp3OdLO1B6b9h4jr,HyC62FJmom0LO5guLOtjKG,Ca7WB74hxl2QSj1DO2xRDo,QRvEyjcMLjjO33cYGaIMKw,FyS0zfUJhxIPafOmzYet21,Pg3Q8CpQ6vmOE2DsCiSmXN,VcyouUK4EqvL6mORgfIOL8,QDp5jcR3dDJMqtk0GoyvwI,CCzaAKzn3oFLIyWPp4dpjo">
+            <Patch Id="QzdoF8xceYINU3buahhRcr" Name="ApplyFeature" ParticipatingElements="MUOfg8Tp3OdLO1B6b9h4jr,HyC62FJmom0LO5guLOtjKG,Ca7WB74hxl2QSj1DO2xRDo,QRvEyjcMLjjO33cYGaIMKw,FyS0zfUJhxIPafOmzYet21,VcyouUK4EqvL6mORgfIOL8,Pg3Q8CpQ6vmOE2DsCiSmXN,QDp5jcR3dDJMqtk0GoyvwI,CCzaAKzn3oFLIyWPp4dpjo">
               <Pin Id="CCD4sMHsUSFO5fNziuZfAW" MergeId="250771" Name="Camera" Kind="InputPin" />
               <Pin Id="IPDzyJ1px4RNoNtAlPXUaF" MergeId="250772" Name="Number Of Sequence Buffers" Kind="InputPin" />
             </Patch>
@@ -17399,7 +17399,7 @@
                 <Link Id="Qfcixn8niopOIpPcJ7dH3U" Ids="MATNV0RCawBMEvVPDF81fS,DhzVBKRuGZHQCLbyqFZ9tO" />
                 <Link Id="ImbfQlIf0dGL04aSF4z7aJ" Ids="O9aRCpc2BqmPrvPVF9C8wo,NZehJaRBa3CNdcyopDFbCU" />
                 <Link Id="A57envXBknAMohukmM90K1" Ids="Lydy6Nk3MjxLeiUG4y58sV,TMaMumX0V7cOOBYJouZyi7" />
-                <Patch Id="HrRkumBEF3zPSysu6JRxgl" Name="Create" ParticipatingElements="Dj0Df5p9K3EL1S69s74ekH,EVM2oPasVjXLQSlud82s7g,BanHusPynDSMl47UePkKAQ,PoI43zJZcj0QTcz8Bv8eDD,CO1bWmYZAmfOrUEe2Ka3y9,PTerISa4D2JNmIku5RtnOo,BZcY5mYhisgMLBpQwDqrLT,RIH5FHAmltXPRxlDN3MF8S,LLnHyCpSjISLgFIPzg2aLL,CemEKPp5xt0PzJcVRc6x3R,E0eaNizxGOfP2Bt4XhxYhz,QkTC7hLa1IKPfsVDFMrwnE">
+                <Patch Id="HrRkumBEF3zPSysu6JRxgl" Name="Create" ParticipatingElements="Dj0Df5p9K3EL1S69s74ekH,RIH5FHAmltXPRxlDN3MF8S,EVM2oPasVjXLQSlud82s7g,BanHusPynDSMl47UePkKAQ,PoI43zJZcj0QTcz8Bv8eDD,CO1bWmYZAmfOrUEe2Ka3y9,LLnHyCpSjISLgFIPzg2aLL,CemEKPp5xt0PzJcVRc6x3R,PTerISa4D2JNmIku5RtnOo,BZcY5mYhisgMLBpQwDqrLT,E0eaNizxGOfP2Bt4XhxYhz,QkTC7hLa1IKPfsVDFMrwnE">
                   <Pin Id="IxHhxomb76EMe7GtqTBc8z" Name="Headline" Kind="InputPin" />
                 </Patch>
                 <Patch Id="JT1Or2LMUPLQHQCQ3eftD4" Name="Update">
@@ -17880,17 +17880,7 @@
                 <Pin Id="MItXR33WzULQXE2ZBATOK9" Name="On Interaction" Kind="OutputPin" />
                 <Pin Id="UXyVgCb1S81QECJFZrAHPs" Name="Value" Kind="OutputPin" />
               </Node>
-              <Node Bounds="964,463,65,19" Id="NHqVPugl8hCPpN2JEEKPxl">
-                <p:NodeReference LastCategoryFullName="Reactive" LastSymbolSource="VL.Reactive.vl">
-                  <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                  <Choice Kind="ProcessAppFlag" Name="HoldLatest" />
-                </p:NodeReference>
-                <Pin Id="EpGW24y3qwUQNsLbstT4kq" Name="Async Notifications" Kind="InputPin" />
-                <Pin Id="KyMoutgqy5lOn5NSAGlkFG" Name="Reset" Kind="InputPin" />
-                <Pin Id="I51uiorNyj6L4EM5pmmjyk" Name="Value" Kind="OutputPin" />
-                <Pin Id="VuLCTAvyvehM2Z4BLQrRLW" Name="On Data" Kind="OutputPin" />
-              </Node>
-              <Pad Id="NplGBGAIjWpNLdxivppvPU" SlotId="GdhM9LYIIMZLZ2wMWJr2rl" Bounds="1026,538" />
+              <Pad Id="NplGBGAIjWpNLdxivppvPU" SlotId="GdhM9LYIIMZLZ2wMWJr2rl" Bounds="996,484" />
               <Pad Id="C8aRQqdaymJNVxyuprrNsC" SlotId="GdhM9LYIIMZLZ2wMWJr2rl" Bounds="554,141" />
               <Pad Id="FFSIbpKVBPGOLMco8c2W2q" SlotId="F9RxojGFKDKPb60vDITBbp" Bounds="1019,393" />
               <ControlPoint Id="VCxTx3babpoQOjq1oEwdY2" Bounds="1019,361" />
@@ -17915,11 +17905,6 @@
               <Pad Id="Vn4ARJnguc6M73a1iSLwXv" SlotId="QIDZc8MxWC8NxerUxsB3gt" Bounds="588,111" />
             </Canvas>
             <Patch Id="Q7bb6Gptiy0MufAO9lbjiY" Name="Create" ParticipatingElements="OZAJSvcpYiZQTqUggKhC5P,BSUzCfmm7tfNNyvZRcoLO0" />
-            <!--
-
-    ************************  ************************
-
--->
             <ProcessDefinition Id="AQdfGzn9zR2OhBFxznRmgR" HasStateOut="true">
               <Fragment Id="BZdv6T8Nd9TPb91nJ4E07F" Patch="Q7bb6Gptiy0MufAO9lbjiY" Enabled="true" />
               <Fragment Id="SGzNIdyMvtDMjBOPSVBfei" Patch="T0IKlXzlSrwOicDv5HvzLx" />
@@ -17939,7 +17924,7 @@
                 </p:TypeAnnotation>
               </Pin>
             </Patch>
-            <Patch Id="L01Fj3onE8BMNSILKVWLXA" Name="GetWidget" ParticipatingElements="U1qYvUiAydUQbW4mxYrTlo,AuD0JQa9lwiLKVYx0aoF2u,FMeyODJqRCvPrPKdB6D85y,LTgQomNH7zxMneSGXikUge">
+            <Patch Id="L01Fj3onE8BMNSILKVWLXA" Name="GetWidget" ParticipatingElements="FMeyODJqRCvPrPKdB6D85y,LTgQomNH7zxMneSGXikUge,VT3BnQBNxGmOIjNya9DOy2">
               <Pin Id="J63lNFp98jVOCmvXGPKdVN" MergeId="7096" Name="UIWidget" Kind="OutputPin">
                 <p:TypeAnnotation>
                   <Choice Kind="TypeFlag" Name="IElementum" />
@@ -17971,8 +17956,6 @@
             <Link Id="BsxONCW17n0ME0KQuDsOhX" Ids="TY1mOR3sbKCPzI1GkjopAw,SKoX2Q6rfrWMuALA2DdKv1" />
             <Link Id="PGVoxQXCrUrOArYc2Pfm5w" Ids="SKoX2Q6rfrWMuALA2DdKv1,JJ0rMJqFYppQHpONtmjzLy" />
             <Link Id="A9XvFfeTHEPPRrK5AhO5ZU" Ids="FJXdcK1Av5vMAKHAWOw9AZ,LBPi07ih9GqL8TPFVH4hCy" />
-            <Link Id="U1qYvUiAydUQbW4mxYrTlo" Ids="MItXR33WzULQXE2ZBATOK9,EpGW24y3qwUQNsLbstT4kq" />
-            <Link Id="AuD0JQa9lwiLKVYx0aoF2u" Ids="VuLCTAvyvehM2Z4BLQrRLW,NplGBGAIjWpNLdxivppvPU" />
             <Link Id="L3oPl1ewlh8MJOowMJz0D0" Ids="C8aRQqdaymJNVxyuprrNsC,LL0YWvbQGN1OkKmm46RTQ3" />
             <Slot Id="F9RxojGFKDKPb60vDITBbp" Name="Pin Value" />
             <Link Id="FMeyODJqRCvPrPKdB6D85y" Ids="FFSIbpKVBPGOLMco8c2W2q,QGFTo7rNuIxOhQ2pStJaHJ" />
@@ -17985,6 +17968,7 @@
             <Link Id="LTgQomNH7zxMneSGXikUge" Ids="NMnHbSJdq1iPDPpQCeR67o,Lsgd7QSuRxuPlVk7WKGlMh" />
             <Link Id="BSUzCfmm7tfNNyvZRcoLO0" Ids="JuYRbBCJCufLbg3NfWmjno,Lsgd7QSuRxuPlVk7WKGlMh" />
             <Link Id="NQtMCQGPDw2LXRlfC0lsyF" Ids="Vn4ARJnguc6M73a1iSLwXv,A37FfEevSgcLtAPKUe3grh" />
+            <Link Id="VT3BnQBNxGmOIjNya9DOy2" Ids="UXyVgCb1S81QECJFZrAHPs,NplGBGAIjWpNLdxivppvPU" />
           </Patch>
         </Node>
       </Canvas>
@@ -25209,7 +25193,7 @@
             <Link Id="ESMToPiGMnUNYxKYYt3cgD" Ids="T37B6gdWffmLgHNupqUahW,UtRhgk2JKEOLfIk7IJvxfP" />
             <Link Id="TFDXDBCGdTqMbM19SmvBxY" Ids="SOGHYn45xdtLCMALlXowK0,QOBaq3LULq9Nhbvzxv2jwH" />
             <Link Id="LCvqR4JdZIPQQeFPJ0ODaE" Ids="M4ZJWsvsEE1Mbj1P8co5gE,JmGNR25WTIrLTq5Vyyv4YB" />
-            <Patch Id="JNNVLQwnOAKMO5VFLRgymb" Name="Create" ParticipatingElements="BMdBW2FRt30N331pZmalhB,RyH3g0Lps2aO8Gsp7vnZiY">
+            <Patch Id="JNNVLQwnOAKMO5VFLRgymb" Name="Create" ParticipatingElements="RyH3g0Lps2aO8Gsp7vnZiY,BMdBW2FRt30N331pZmalhB">
               <Pin Id="PmlixGCO0Z1LEOwP8kA9yU" Name="Node Context" Kind="InputPin" Visibility="Hidden" />
             </Patch>
             <Patch Id="Ij4SnVL1R5UP5rAPwDwSGA" Name="Update">
@@ -25660,11 +25644,6 @@
                     </p:TypeAnnotation>
                   </Pad>
                 </Canvas>
-                <Patch Id="RMu1lXhDpTrMXVsROfxUvv" Name="Create" />
-                <Patch Id="Sw0A2V1HigEPdaziGGA3A2" Name="Update">
-                  <Pin Id="ILr7LEhhFF3QGk7HtswNFI" Name="Visible" Kind="InputPin" Bounds="592,444" />
-                  <Pin Id="MZMMho8mAGDLNQ5iC7Kg2Y" Name="Form" Kind="InputPin" Bounds="506,440" />
-                </Patch>
                 <ProcessDefinition Id="EKTYt79N6IhO2lnkDULEyM">
                   <Fragment Id="UJberhVlPZ0MPpvK0Py3AJ" Patch="RMu1lXhDpTrMXVsROfxUvv" Enabled="true" />
                   <Fragment Id="BF74A0vbKrZLpdLEJNQCJK" Patch="Sw0A2V1HigEPdaziGGA3A2" Enabled="true" />
@@ -25685,6 +25664,11 @@
                 <Link Id="HlDXEhb0gFfLse7yJ0Y9PO" Ids="F7ON6PKu2dhNJeCu0PnCiP,VJioCgg2RZgNx2Gy0vekGf" />
                 <Link Id="HucTRrX0zJiPgk41njXxwz" Ids="GsryJ94Igo7QQznZVEorNS,DebTwFQmfMsObzQ6oz2QXU" />
                 <Link Id="SKnjCRDIlglNVAsd4Q10pj" Ids="PJUWqmbXNBZNYI7JF7AM6u,DBGdAeVg2mlLmsPoqzTAbO" />
+                <Patch Id="RMu1lXhDpTrMXVsROfxUvv" Name="Create" />
+                <Patch Id="Sw0A2V1HigEPdaziGGA3A2" Name="Update">
+                  <Pin Id="MZMMho8mAGDLNQ5iC7Kg2Y" Name="Form" Kind="InputPin" Bounds="506,440" />
+                  <Pin Id="ILr7LEhhFF3QGk7HtswNFI" Name="Visible" Kind="InputPin" Bounds="592,444" />
+                </Patch>
               </Patch>
             </Node>
           </Canvas>
