@@ -17765,10 +17765,10 @@
         </Canvas>
         <!--
 
-    ************************ AutoGainBalance ************************
+    ************************ SoftwareAutoGain ************************
 
 -->
-        <Node Name="AutoGainBalance" Bounds="489,460" Id="KaUEbgf2fX2QDqvKXzk7R1">
+        <Node Name="SoftwareAutoGain" Bounds="489,460" Id="KaUEbgf2fX2QDqvKXzk7R1">
           <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="builtin">
             <Choice Kind="ClassDefinition" Name="Class" />
           </p:NodeReference>
