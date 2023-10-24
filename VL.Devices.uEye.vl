@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Document xmlns:p="property" Id="C9wuniY8A6fN4Y25tHnO8w" Authors="vvvv group" LicenseUrl="https://www.gnu.org/licenses/lgpl.html" ProjectUrl="http://vvvv.org/" LanguageVersion="2021.3.3.131" Version="0.128">
+<Document xmlns:p="property" Id="C9wuniY8A6fN4Y25tHnO8w" Authors="vvvv group" LicenseUrl="https://www.gnu.org/licenses/lgpl.html" ProjectUrl="http://vvvv.org/" LanguageVersion="2021.4.10.1043" Version="0.128">
   <Patch Id="Th8hpfHvBF4Lk6VOwDCc9D">
     <Canvas Id="NtZT52Xp5qNOXK0fF2H7kv" DefaultCategory="Devices.uEye" CanvasType="FullCategory">
       <Canvas Id="CVwhpVsdVtaOyiBJaXQ0ET" Name="Helpers" Position="295,300">
@@ -564,18 +564,6 @@
                 <ControlPoint Id="TnPkkp4olrxLyhLrqequpm" Bounds="647,1290" />
                 <ControlPoint Id="PtkBY31JpcvM0i38RYsuX6" Bounds="465,1287" />
               </Canvas>
-              <Patch Id="DEJRlLr7ODlOjwXuLJTjJn" Name="Update">
-                <Pin Id="GP8K2BurnwrM1bctGabOA2" Name="Camera" Kind="InputPin" />
-                <Pin Id="UJanuO6fCNyO04AKIN0G9K" Name="Number Of Sequence Buffers" Kind="InputPin" />
-                <Pin Id="R6xOJxmrAM3PjKSxAW51P9" Name="AllocateImageMemory" Kind="InputPin" />
-                <Pin Id="AVchBvNmEXtMGcbYnQAneT" Name="PixelFormat" Kind="OutputPin" />
-                <Pin Id="Ip7lewbrWnjQAOPeeU6Nfb" Name="Status" Kind="OutputPin" Bounds="1093,1627" />
-                <Pin Id="TciLYuYz7PTQUNJEzILCTh" Name="ColorMode" Kind="OutputPin" Bounds="1280,1268" />
-                <Pin Id="UbOlFQdLIMFOyfoySL1yAk" Name="Camera" Kind="OutputPin" Bounds="921,1470" />
-                <Pin Id="Gh0WsoiiesQOS2Y89vSqHw" Name="ColorMode" Kind="InputPin" Bounds="633,801" />
-                <Pin Id="TnJy8G481GaMSOPCh1m5c6" Name="BitsPerPixel" Kind="OutputPin" Bounds="647,1290" />
-                <Pin Id="RI1Iaglqg24LJWvoBAtt0f" Name="MemIDs" Kind="OutputPin" Bounds="465,1287" />
-              </Patch>
               <ProcessDefinition Id="EOu15qJTthiPmQe5rgeRB8">
                 <Fragment Id="FWAs5vIm60YM7IOv7Ccw0a" Patch="DEJRlLr7ODlOjwXuLJTjJn" Enabled="true" />
               </ProcessDefinition>
@@ -662,6 +650,18 @@
               <Link Id="KWoBAVPu85iPFtYa2JGbHQ" Ids="DrKDWnR4zlaNlOfpgGWYKC,LopeqSmriKRLGK2mGiQwtz" />
               <Link Id="Te63WyfXPQwNIpdBUruOmj" Ids="LopeqSmriKRLGK2mGiQwtz,PtkBY31JpcvM0i38RYsuX6" />
               <Link Id="LQpSYg67uoeOQuMqtAlhot" Ids="PtkBY31JpcvM0i38RYsuX6,RI1Iaglqg24LJWvoBAtt0f" IsHidden="true" />
+              <Patch Id="DEJRlLr7ODlOjwXuLJTjJn" Name="Update">
+                <Pin Id="UJanuO6fCNyO04AKIN0G9K" Name="Number Of Sequence Buffers" Kind="InputPin" />
+                <Pin Id="R6xOJxmrAM3PjKSxAW51P9" Name="AllocateImageMemory" Kind="InputPin" />
+                <Pin Id="GP8K2BurnwrM1bctGabOA2" Name="Camera" Kind="InputPin" />
+                <Pin Id="Gh0WsoiiesQOS2Y89vSqHw" Name="ColorMode" Kind="InputPin" Bounds="633,801" />
+                <Pin Id="UbOlFQdLIMFOyfoySL1yAk" Name="Camera" Kind="OutputPin" Bounds="921,1470" />
+                <Pin Id="Ip7lewbrWnjQAOPeeU6Nfb" Name="Status" Kind="OutputPin" Bounds="1093,1627" />
+                <Pin Id="RI1Iaglqg24LJWvoBAtt0f" Name="MemIDs" Kind="OutputPin" Bounds="465,1287" />
+                <Pin Id="AVchBvNmEXtMGcbYnQAneT" Name="PixelFormat" Kind="OutputPin" />
+                <Pin Id="TciLYuYz7PTQUNJEzILCTh" Name="ColorMode" Kind="OutputPin" Bounds="1280,1268" />
+                <Pin Id="TnJy8G481GaMSOPCh1m5c6" Name="BitsPerPixel" Kind="OutputPin" Bounds="647,1290" />
+              </Patch>
             </Patch>
           </Node>
           <!--
@@ -2125,7 +2125,7 @@
               <Link Id="D3Z3BHy8trMMlSknYTPnQp" Ids="IkgJAnwgOvPMj5ovSsSJXv,EurXsLpiNB3NRigpNdUJQr" />
               <Patch Id="Phirv8wXeHZOe2FHS0Si4I" Name="Dispose" ParticipatingElements="PqFPfcAEWqlMYMLk0CkAjD" />
               <Slot Id="V2fSnAs97TqMKALgWp4KLs" Name="Images">
-                <p:TypeAnnotation>
+                <p:TypeAnnotation p:Type="TypeReference">
                   <Choice Kind="TypeFlag" Name="Subject" />
                   <p:TypeArguments>
                     <TypeReference>
@@ -4186,26 +4186,9 @@
                 <Pin Id="OmK2hu4WD1OLeeZmxyumlv" Name="Output" Kind="OutputPin" />
               </Node>
             </Canvas>
-            <Patch Id="MZP8sv7zrFuLc7vxRkE2Ne" Name="Create" ParticipatingElements="L2uCAyJZg2qPDZWcuEfvO5" />
-            <Patch Id="QfQ3ZuE25TyOXF7Lk43P5o" Name="Update">
-              <Pin Id="IolawnXknVqNKJ7vdORY36" Name="Framerate" Kind="InputPin" />
-              <Pin Id="CEuuDu1IFZQONoP2rF3FQi" Name="current Framerate" Kind="OutputPin" />
-              <Pin Id="EtVwbIZKJVINDwNQRx9gCL" Name="min FPS" Kind="OutputPin" />
-              <Pin Id="EkVeefV65qYLqfqJMKdEb7" Name="max FPS" Kind="OutputPin" />
-              <Pin Id="C5RpAFzW9xWNr5jETxJJCh" Name="status" Kind="OutputPin" />
-              <Pin Id="DChQonCVnMqNyILbt4hV7w" Name="Retrigger Threshold" Kind="InputPin" DefaultValue="1" Visibility="Optional">
-                <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
-                  <Choice Kind="TypeFlag" Name="Float64" />
-                </p:TypeAnnotation>
-              </Pin>
-            </Patch>
             <Link Id="T4LK1g9ppgfOzOUunzEtkZ" Ids="IolawnXknVqNKJ7vdORY36,J0x1fIGVyztMS5Vfim3wlZ" IsHidden="true" />
             <Link Id="GqnGyC4LyEjONlbqovZEOS" Ids="Q0m3LoyeJ4hPFyLNfNzpEA,EtVwbIZKJVINDwNQRx9gCL" IsHidden="true" />
             <Link Id="JSCjh4fl7PzN54xNmcbTCm" Ids="LqagmH0AbUoOq5syiTWPds,EkVeefV65qYLqfqJMKdEb7" IsHidden="true" />
-            <Patch Id="RfBiMamKURQNbt8cEOTR6f" Name="ApplyFeature" ParticipatingElements="RvT4uBR7BjvMBnholuBNoa,VPr0rF5yJ10MwrA9MNLEf5,RQh8FQ0Hj3nLR1Htva7rHU,KnpvoYbx3sYOY4VwLgReB8,L3E3d8ZomRFP3yw4GUuJzK,VnNaGbjeeiyOOedd7SDdCY,C0QmdYOQLWjL5Chyu88hnq,I9HOJUkw35WLALzTP97oHF">
-              <Pin Id="KODYo9qdewVOSeovlNUAAh" MergeId="250771" Name="Camera" Kind="InputPin" />
-              <Pin Id="T8EhRc5r49xQBL5OA7Y1bB" MergeId="250772" Name="Number Of Sequence Buffers" Kind="InputPin" />
-            </Patch>
             <Link Id="BwSrujma9VJLATw7K77igO" Ids="KODYo9qdewVOSeovlNUAAh,NCp9SHrWjGpQWjwFuhc9Ht" IsHidden="true" />
             <Link Id="EHZWX8XoequMzDwfaDGxM4" Ids="T8EhRc5r49xQBL5OA7Y1bB,ILRaFrZBgFjNcSblECTVwd" IsHidden="true" />
             <Link Id="SkPWHzzNVT2NIsBXbcwj8u" Ids="UKP5zPcTq6PLo0sRboI6VG,GaUeq447g4TNTkJHfE7VaK" />
@@ -4226,9 +4209,6 @@
             <Link Id="NadqFdfotVvPeHjWbEnXem" Ids="TISkBeklBj3OC4d4zK5MHc,C5RpAFzW9xWNr5jETxJJCh" IsHidden="true" />
             <Link Id="LJAoxgUn3pwO9jxaBmSMrZ" Ids="GIfLftfc2XpQdZx3iIVOz3,Uj5cg1bvLW2QKVSX8h3QCk" />
             <Link Id="IVmlxULY4NVMviV0BM7w75" Ids="F9faypAvmgNLGWgpdKpIAk,BW0AGJWovUuPW1rDLJDAV8" />
-            <Patch Id="RWw569FazfgMbp29SjEZvf" Name="GetWidget" ParticipatingElements="JOcfreiGJXlQQuvT8aYYFi">
-              <Pin Id="P6pDQD5IdOHLrzYiZVx7zQ" MergeId="343653" Name="UIWidget" Kind="OutputPin" />
-            </Patch>
             <Link Id="GiF4PFn2o87Ob1p4sj68Mb" Ids="EqZckblRRjlQJOj2wAq5gc,P6pDQD5IdOHLrzYiZVx7zQ" IsHidden="true" />
             <Slot Id="HQtomUSdyRjQb0iUdEdhR2" Name="min" />
             <Slot Id="GCEykPeMx9lNdzoRiYDVUI" Name="max" />
@@ -4262,7 +4242,7 @@
             <Link Id="BTEANdOnMX3PrmcZkmhF2y" Ids="BMHyqOP6LJPLcLYIpHACQx,MzNr2R5FQPWMvXLwRyxvv9" />
             <Link Id="AKyKySJI803PizPaqib1d3" Ids="JR3RGDQvuOBN1D0cuz9TLu,BAGQ0rwmGoWMRW2If2T7KT" />
             <Slot Id="UFMkkvevrdRNMnVnb39FUf" Name="target framerate">
-              <p:TypeAnnotation>
+              <p:TypeAnnotation p:Type="TypeReference">
                 <Choice Kind="TypeFlag" Name="Float32" />
               </p:TypeAnnotation>
             </Slot>
@@ -4305,6 +4285,26 @@
             <Link Id="UlIiLK1PkWNQXRf1KxOpFB" Ids="OOPc41emEp8PSGz48GPQgv,CycnyfkEuFdOTbtVoM6eTq" />
             <Link Id="MjA6fqbOhENNPjVzkhzT3U" Ids="Ihh1qc51U8DQLix8jaVF2A,POC8mGbtHAhPiHudP1pKgc" />
             <Link Id="EfEpjE44dJoQCwJBnXTCGo" Ids="OmK2hu4WD1OLeeZmxyumlv,JIWzUgURBQmLED9b0pDtWy" />
+            <Patch Id="MZP8sv7zrFuLc7vxRkE2Ne" Name="Create" ParticipatingElements="L2uCAyJZg2qPDZWcuEfvO5" />
+            <Patch Id="QfQ3ZuE25TyOXF7Lk43P5o" Name="Update">
+              <Pin Id="DChQonCVnMqNyILbt4hV7w" Name="Retrigger Threshold" Kind="InputPin" DefaultValue="1" Visibility="Optional">
+                <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+                  <Choice Kind="TypeFlag" Name="Float64" />
+                </p:TypeAnnotation>
+              </Pin>
+              <Pin Id="IolawnXknVqNKJ7vdORY36" Name="Framerate" Kind="InputPin" />
+              <Pin Id="CEuuDu1IFZQONoP2rF3FQi" Name="current Framerate" Kind="OutputPin" />
+              <Pin Id="C5RpAFzW9xWNr5jETxJJCh" Name="status" Kind="OutputPin" />
+              <Pin Id="EtVwbIZKJVINDwNQRx9gCL" Name="min FPS" Kind="OutputPin" />
+              <Pin Id="EkVeefV65qYLqfqJMKdEb7" Name="max FPS" Kind="OutputPin" />
+            </Patch>
+            <Patch Id="RfBiMamKURQNbt8cEOTR6f" Name="ApplyFeature" ParticipatingElements="RvT4uBR7BjvMBnholuBNoa,VPr0rF5yJ10MwrA9MNLEf5,RQh8FQ0Hj3nLR1Htva7rHU,KnpvoYbx3sYOY4VwLgReB8,L3E3d8ZomRFP3yw4GUuJzK,VnNaGbjeeiyOOedd7SDdCY,C0QmdYOQLWjL5Chyu88hnq,I9HOJUkw35WLALzTP97oHF">
+              <Pin Id="KODYo9qdewVOSeovlNUAAh" MergeId="250771" Name="Camera" Kind="InputPin" />
+              <Pin Id="T8EhRc5r49xQBL5OA7Y1bB" MergeId="250772" Name="Number Of Sequence Buffers" Kind="InputPin" />
+            </Patch>
+            <Patch Id="RWw569FazfgMbp29SjEZvf" Name="GetWidget" ParticipatingElements="JOcfreiGJXlQQuvT8aYYFi">
+              <Pin Id="P6pDQD5IdOHLrzYiZVx7zQ" MergeId="343653" Name="UIWidget" Kind="OutputPin" />
+            </Patch>
           </Patch>
         </Node>
         <!--
@@ -5901,21 +5901,9 @@
                 <Pin Id="NhXcuRmgZ2VP2UsCZ3pESH" Name="Result" Kind="OutputPin" />
               </Node>
             </Canvas>
-            <Patch Id="Dv8tFGOruxtN2ZgSTB33P0" Name="Create" ParticipatingElements="FeL53KIyTpcPGwxIHvvr2m" />
-            <Patch Id="PURX3SCLtgEPUWxdmNyic4" Name="Update">
-              <Pin Id="HSKukvSSDz5LiDAqlRWCJT" Name="Exposure" Kind="InputPin" />
-              <Pin Id="B7L975sVUHTOifkTgJsTlC" Name="min Exposure" Kind="OutputPin" />
-              <Pin Id="AqLW4fJIWOeQHZ1MLodpvs" Name="max Exposure" Kind="OutputPin" />
-              <Pin Id="VyD0iuVbWTdQQ1E6lnCVn6" Name="Current Exposure" Kind="OutputPin" />
-              <Pin Id="L4cTvZwaJ5HN8g5bVUWpNG" Name="Status" Kind="OutputPin" />
-            </Patch>
             <Link Id="HMrfNlGGUwCLqSdEL9J7qt" Ids="GeZ0QKdj3IIMgkBvtvqf8q,VyD0iuVbWTdQQ1E6lnCVn6" IsHidden="true" />
             <Link Id="A4pyUlFYznaNeZRZBeYnNJ" Ids="TcbVgGwbZk9NRhIB30fshJ,B7L975sVUHTOifkTgJsTlC" IsHidden="true" />
             <Link Id="IFdQKDdtCkHLSwNzLPKwih" Ids="CnCsFqoUhYRNRm3rKgIJiZ,AqLW4fJIWOeQHZ1MLodpvs" IsHidden="true" />
-            <Patch Id="D185rBiZn2kO1mMX060EMm" Name="ApplyFeature" ParticipatingElements="Qec1kNTBRYnQRrUGIs46vt,FOdENulBB3nNTOOl9q6TR0,Ne8y65IHMWZPb7OZO9Zllj,IsSMXwBMWjMLIUlYUBUz46,P5ZcoQ74w4AN6JkZ4W6e1N,HhM7773EtmzNDrf3VUH7PQ,FUX5FWGE3dfNfMo2w8BL2R,JuuT4vuO9qTN5TBiS75xZk,AZpiKt95NAvN8LCmCpRwWL">
-              <Pin Id="JRTNbybPxRsNeih71A5TgJ" Name="Camera" Kind="InputPin" />
-              <Pin Id="BqETJ8K8pGtNUy42LJNy4s" Name="Number Of Sequence Buffers" Kind="InputPin" />
-            </Patch>
             <Link Id="RaWzZQutwFeNINg8sVe5VG" Ids="JRTNbybPxRsNeih71A5TgJ,NvLZwO9ujCjMmoVnJzhoKD" IsHidden="true" />
             <Link Id="By6JyCdDqhlPm3f5ON6mUh" Ids="BqETJ8K8pGtNUy42LJNy4s,VM3CiQwjxdQNQeacjBYy1g" IsHidden="true" />
             <ProcessDefinition Id="OACRUWdvLtaPE3zhxx4TzN" HasStateOut="true">
@@ -5950,9 +5938,6 @@
             <Link Id="DbWeECzCwCvMC7We8IxEtz" Ids="CTxBDbf2mvoLzlR0fV8lQM,G0O1YMVzltPNhfrgBlKhPa" />
             <Link Id="R9vcGjvsoION5i2nQ1oRZJ" Ids="TVFEcv5jemFLzK15H6v0rL,VHvhTCYwbP5M1HNtSupfwy" />
             <Link Id="M7Hyzrtz45BOtSDLrddP3o" Ids="AHjBk84FzlxNgVDhfejKml,JUwqm7TDNkcQacafaRg8tP" />
-            <Patch Id="NHLrZUgoFuJMVBcG1xZzrs" Name="GetWidget" ParticipatingElements="KOy2MVNkGx7Pc0t4lmfCdw">
-              <Pin Id="K3IM4D2yiiWMaeHmFB3sH2" Name="UIWidget" Kind="OutputPin" />
-            </Patch>
             <Slot Id="K9V4QHvzsx6LLVtSt0FvPd" Name="min" />
             <Slot Id="PmPHfG13gHENu7hXW2P98l" Name="max" />
             <Link Id="PL9MzipSk2hLgYwlWjI6xP" Ids="URwj5vlfSsjLACg1F51YtU,EMye4zoDMMqOQtGgZ1SFzA" />
@@ -5989,7 +5974,7 @@
             <Link Id="JuuT4vuO9qTN5TBiS75xZk" Ids="UtnGS3pUd2sLO7WQXwW2nu,D8TeXWg3nmvMHtG9LV8nWq" />
             <Link Id="BxnCnQoHkfxNsOZora3EwJ" Ids="C3sVBymtMXQPGYWLjKc2hn,UtnGS3pUd2sLO7WQXwW2nu" />
             <Slot Id="PFEzQPT7Y9pLrC4reRVXBv" Name="target exposure">
-              <p:TypeAnnotation>
+              <p:TypeAnnotation p:Type="TypeReference">
                 <Choice Kind="TypeFlag" Name="Float32" />
               </p:TypeAnnotation>
             </Slot>
@@ -6016,6 +6001,21 @@
             <Link Id="LRTFopn0nObNznTPA0IfBa" Ids="EgIu30vcAD2LpjYNTl8JCj,IcDD2FaZmOMPT8ZdSU7jGr" />
             <Link Id="FuJSWxkYYxsOJj5jAyp5so" Ids="NhXcuRmgZ2VP2UsCZ3pESH,CstKBFEuJLLOooWmbOYGIh" />
             <Link Id="N0Z8xskiIZwMUTCgnEKb1Y" Ids="NW2eHUbsAHHQaLUClFTws6,JvEhXjmZ3EDP2RJcIHYpyF" />
+            <Patch Id="Dv8tFGOruxtN2ZgSTB33P0" Name="Create" ParticipatingElements="FeL53KIyTpcPGwxIHvvr2m" />
+            <Patch Id="PURX3SCLtgEPUWxdmNyic4" Name="Update">
+              <Pin Id="HSKukvSSDz5LiDAqlRWCJT" Name="Exposure" Kind="InputPin" />
+              <Pin Id="VyD0iuVbWTdQQ1E6lnCVn6" Name="Current Exposure" Kind="OutputPin" />
+              <Pin Id="L4cTvZwaJ5HN8g5bVUWpNG" Name="Status" Kind="OutputPin" />
+              <Pin Id="B7L975sVUHTOifkTgJsTlC" Name="min Exposure" Kind="OutputPin" />
+              <Pin Id="AqLW4fJIWOeQHZ1MLodpvs" Name="max Exposure" Kind="OutputPin" />
+            </Patch>
+            <Patch Id="D185rBiZn2kO1mMX060EMm" Name="ApplyFeature" ParticipatingElements="Qec1kNTBRYnQRrUGIs46vt,FOdENulBB3nNTOOl9q6TR0,Ne8y65IHMWZPb7OZO9Zllj,IsSMXwBMWjMLIUlYUBUz46,P5ZcoQ74w4AN6JkZ4W6e1N,HhM7773EtmzNDrf3VUH7PQ,FUX5FWGE3dfNfMo2w8BL2R,JuuT4vuO9qTN5TBiS75xZk,AZpiKt95NAvN8LCmCpRwWL">
+              <Pin Id="JRTNbybPxRsNeih71A5TgJ" Name="Camera" Kind="InputPin" />
+              <Pin Id="BqETJ8K8pGtNUy42LJNy4s" Name="Number Of Sequence Buffers" Kind="InputPin" />
+            </Patch>
+            <Patch Id="NHLrZUgoFuJMVBcG1xZzrs" Name="GetWidget" ParticipatingElements="KOy2MVNkGx7Pc0t4lmfCdw">
+              <Pin Id="K3IM4D2yiiWMaeHmFB3sH2" Name="UIWidget" Kind="OutputPin" />
+            </Patch>
           </Patch>
         </Node>
         <!--
@@ -6276,7 +6276,7 @@
             <Slot Id="J2WxxmuTLsuNWzBNLkWY9a" Name="status" />
             <Slot Id="DyFsg4eGs1PNr8CccOmjQV" Name="current Gain" />
             <Slot Id="LGjOmdu1W1EMyB3ErX4hCc" Name="target gain">
-              <p:TypeAnnotation>
+              <p:TypeAnnotation p:Type="TypeReference">
                 <Choice Kind="TypeFlag" Name="Float32" />
               </p:TypeAnnotation>
             </Slot>
@@ -7667,14 +7667,14 @@
             <Link Id="KNhXGt2X7upPSCYQoGELkx" Ids="E62IfeIqBQ3P3dTIcGM0tu,VacFbtI4LHHPVTf7lHZfQ2" IsHidden="true" />
             <Link Id="UEWfmSBhWyPLnr22xLEpkG" Ids="VacFbtI4LHHPVTf7lHZfQ2,FA7v0d7cmtZPLrCmHk7CZz" />
             <Slot Id="POymWjYsrBZL4vjQt67Cef" Name="target 1">
-              <p:TypeAnnotation>
+              <p:TypeAnnotation p:Type="TypeReference">
                 <Choice Kind="TypeFlag" Name="SubsamplingMode" />
               </p:TypeAnnotation>
             </Slot>
             <Link Id="LHOvyAsJiykP4vLeKCHMhQ" Ids="DZbDSIoTa5xMex8hFbabpf,LHDMZU7Pe09LckJ0ur0rAw" />
             <Link Id="VYIL7L4tegbLaLPeupEKo1" Ids="J0aliz9zwCxM7NhVHZJNWS,DZbDSIoTa5xMex8hFbabpf" IsHidden="true" />
             <Slot Id="AlLQPw1kFNbOm2usi8gTVx" Name="target 2">
-              <p:TypeAnnotation>
+              <p:TypeAnnotation p:Type="TypeReference">
                 <Choice Kind="TypeFlag" Name="SubsamplingMode" />
               </p:TypeAnnotation>
             </Slot>
@@ -9337,31 +9337,9 @@
               </Pad>
               <Pad Id="Ipw7wuGRugyPrkj7M1Mzpp" SlotId="I9nZRcA5iyzMDSCBdBfy6O" Bounds="314,742" />
             </Canvas>
-            <Patch Id="NhsXJCIVQLHLSSdv0ooBcS" Name="Create" ParticipatingElements="DZ6iLD5weN3LD0eCCl3TVc" />
-            <Patch Id="F7DGqTodU63LxdfXauc2oU" Name="Update">
-              <Pin Id="GPwWeH9ub5IM0VX1dh7yCx" Name="PixelClock" Kind="InputPin">
-                <p:TypeAnnotation>
-                  <Choice Kind="TypeFlag" Name="Integer32" />
-                </p:TypeAnnotation>
-              </Pin>
-              <Pin Id="FtGO3He6CePQU88ndIsVAz" Name="current Pixelclock" Kind="OutputPin" />
-              <Pin Id="Rp8bewSCw7xMBrwGn6OIoG" Name="min Pixelclock" Kind="OutputPin" />
-              <Pin Id="AgWhhDATBSmOEKm5xtO7Va" Name="max Pixelclock" Kind="OutputPin" />
-              <Pin Id="Jq7kibNyCxGP9gIBMqUpIJ" Name="status" Kind="OutputPin" />
-              <Pin Id="UFNeuvG3XK5NmoFrS3Rji1" Name="Retrigger Threshold" Kind="InputPin" DefaultValue="1" Visibility="Optional">
-                <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
-                  <Choice Kind="TypeFlag" Name="Float64" />
-                </p:TypeAnnotation>
-              </Pin>
-              <Pin Id="Gy9Phh0SBQNLJGuLJxbM9r" Name="possible Values" Kind="OutputPin" />
-            </Patch>
             <Link Id="GjAxhjb4gzfNv1e7bbMu3A" Ids="GPwWeH9ub5IM0VX1dh7yCx,KDXKwbv5B7uLKUT3XNNQ9b" IsHidden="true" />
             <Link Id="MrqGbS33ExiOAyiSpQ3chb" Ids="VPSv1RskODPMsI8DVB5r42,Rp8bewSCw7xMBrwGn6OIoG" IsHidden="true" />
             <Link Id="Pa5OhJW2mtAMGkmeFllP7y" Ids="FKoxY1gRGcVMwmX0ebdxI4,AgWhhDATBSmOEKm5xtO7Va" IsHidden="true" />
-            <Patch Id="QzdoF8xceYINU3buahhRcr" Name="ApplyFeature" ParticipatingElements="MUOfg8Tp3OdLO1B6b9h4jr,HyC62FJmom0LO5guLOtjKG,Ca7WB74hxl2QSj1DO2xRDo,QRvEyjcMLjjO33cYGaIMKw,FyS0zfUJhxIPafOmzYet21,Pg3Q8CpQ6vmOE2DsCiSmXN,VcyouUK4EqvL6mORgfIOL8,QDp5jcR3dDJMqtk0GoyvwI,CCzaAKzn3oFLIyWPp4dpjo">
-              <Pin Id="CCD4sMHsUSFO5fNziuZfAW" MergeId="250771" Name="Camera" Kind="InputPin" />
-              <Pin Id="IPDzyJ1px4RNoNtAlPXUaF" MergeId="250772" Name="Number Of Sequence Buffers" Kind="InputPin" />
-            </Patch>
             <Link Id="HFMkmcgnQNfNAM4UGZOObI" Ids="CCD4sMHsUSFO5fNziuZfAW,J3XbZ3shqIeN0L7gDmtHCF" IsHidden="true" />
             <Link Id="SnCg12jimAWN5l86E5r5no" Ids="IPDzyJ1px4RNoNtAlPXUaF,QCpqDMNvFKxQRlv7gSGCgc" IsHidden="true" />
             <Link Id="LxTCwFofbgvMDNv2GEeVCO" Ids="POBn0cxS1IIP0AlkKO925s,AFMuxc5779ZOKDnuoHRxJQ" />
@@ -9375,9 +9353,6 @@
             <Slot Id="HVvmZq7z8ViLNwV2WOMzi4" Name="status" />
             <Link Id="McjnuDOfcaGLqRo6a4gDCD" Ids="B1RDELBC8NPNoXHenapUPo,JaotWBQJiEoOWKSddqGgs8" />
             <Link Id="NUZ3MxU2Rx5OUf8B91dpot" Ids="JaotWBQJiEoOWKSddqGgs8,Jq7kibNyCxGP9gIBMqUpIJ" IsHidden="true" />
-            <Patch Id="PbpBa3GFSTVLTtVTBn9P9v" Name="GetWidget" ParticipatingElements="Cl5CfQStO4LNss5tZIR2xn">
-              <Pin Id="SUJP0fKfXG2MfkqjnQlcOV" MergeId="343653" Name="UIWidget" Kind="OutputPin" />
-            </Patch>
             <Link Id="BH1YsTzPanPNzK8Iw6ilX2" Ids="PTzEuHEIUBTNHgMOzAibDC,SUJP0fKfXG2MfkqjnQlcOV" IsHidden="true" />
             <Slot Id="POIxAn5rlcbOB3Q81c3Txp" Name="min" />
             <Slot Id="GecKNUcvnKxMqR3MHeAkM1" Name="max" />
@@ -9468,6 +9443,31 @@
             <Link Id="US4br2TdTVWME2ZihXKoRT" Ids="MSYTADBJCzAOwFB63IyRxk,IyKhELenm9dOVrcjyWNLFx" />
             <Link Id="FBkt2wwnXt6PLuUcBEc1Hh" Ids="CW7GjGFTsQCNyDBeledXNt,MZcYgAZA3P9PGh5fF033tO" />
             <Link Id="DuKA0iPK1EgLgLxe1DJYDw" Ids="CW7GjGFTsQCNyDBeledXNt,MSiMdojHizoNwcn115jlZa" />
+            <Patch Id="NhsXJCIVQLHLSSdv0ooBcS" Name="Create" ParticipatingElements="DZ6iLD5weN3LD0eCCl3TVc" />
+            <Patch Id="F7DGqTodU63LxdfXauc2oU" Name="Update">
+              <Pin Id="UFNeuvG3XK5NmoFrS3Rji1" Name="Retrigger Threshold" Kind="InputPin" DefaultValue="1" Visibility="Optional">
+                <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+                  <Choice Kind="TypeFlag" Name="Float64" />
+                </p:TypeAnnotation>
+              </Pin>
+              <Pin Id="GPwWeH9ub5IM0VX1dh7yCx" Name="PixelClock" Kind="InputPin">
+                <p:TypeAnnotation>
+                  <Choice Kind="TypeFlag" Name="Integer32" />
+                </p:TypeAnnotation>
+              </Pin>
+              <Pin Id="FtGO3He6CePQU88ndIsVAz" Name="current Pixelclock" Kind="OutputPin" />
+              <Pin Id="Jq7kibNyCxGP9gIBMqUpIJ" Name="status" Kind="OutputPin" />
+              <Pin Id="Rp8bewSCw7xMBrwGn6OIoG" Name="min Pixelclock" Kind="OutputPin" />
+              <Pin Id="AgWhhDATBSmOEKm5xtO7Va" Name="max Pixelclock" Kind="OutputPin" />
+              <Pin Id="Gy9Phh0SBQNLJGuLJxbM9r" Name="possible Values" Kind="OutputPin" />
+            </Patch>
+            <Patch Id="QzdoF8xceYINU3buahhRcr" Name="ApplyFeature" ParticipatingElements="MUOfg8Tp3OdLO1B6b9h4jr,HyC62FJmom0LO5guLOtjKG,Ca7WB74hxl2QSj1DO2xRDo,QRvEyjcMLjjO33cYGaIMKw,FyS0zfUJhxIPafOmzYet21,VcyouUK4EqvL6mORgfIOL8,Pg3Q8CpQ6vmOE2DsCiSmXN,QDp5jcR3dDJMqtk0GoyvwI,CCzaAKzn3oFLIyWPp4dpjo">
+              <Pin Id="CCD4sMHsUSFO5fNziuZfAW" MergeId="250771" Name="Camera" Kind="InputPin" />
+              <Pin Id="IPDzyJ1px4RNoNtAlPXUaF" MergeId="250772" Name="Number Of Sequence Buffers" Kind="InputPin" />
+            </Patch>
+            <Patch Id="PbpBa3GFSTVLTtVTBn9P9v" Name="GetWidget" ParticipatingElements="Cl5CfQStO4LNss5tZIR2xn">
+              <Pin Id="SUJP0fKfXG2MfkqjnQlcOV" MergeId="343653" Name="UIWidget" Kind="OutputPin" />
+            </Patch>
           </Patch>
         </Node>
         <Canvas Id="QxNLKMtOL6uOTpX5Z2Lv81" Name="Info" Position="180,804">
@@ -13479,13 +13479,13 @@
             </ProcessDefinition>
             <Link Id="VctLnwzVyfxQNorkbVLaFt" Ids="PJAI0B0YcnLPcltECtDMLo,EaOWdlgkGwINws2TxdpC5g" IsHidden="true" />
             <Slot Id="SHOIn5cNwvuLaZBrzPv0GW" Name="target Format">
-              <p:TypeAnnotation>
+              <p:TypeAnnotation p:Type="TypeReference">
                 <Choice Kind="TypeFlag" Name="AllowedColorMode" />
               </p:TypeAnnotation>
             </Slot>
             <Link Id="Gnc2kGv2jqIM5Kihk1bof5" Ids="FOBmn0PCum2PU5ysYLnLFb,F0YTlUTYmpMPezudxMDXJp" IsHidden="true" />
             <Slot Id="NkzyqfEZCyTNXzKfDDuHN9" Name="Selected Entry">
-              <p:TypeAnnotation>
+              <p:TypeAnnotation p:Type="TypeReference">
                 <Choice Kind="TypeFlag" Name="AllowedColorMode" />
               </p:TypeAnnotation>
             </Slot>
@@ -14036,14 +14036,6 @@
               <ControlPoint Id="HbUxqkxTJVbOExkWBQ8EaM" Bounds="317,323" />
               <Pad Id="VS1KT9uQqAaQTJypbhomaU" Bounds="315,335" />
             </Canvas>
-            <Patch Id="P5TEAVbaHgzOvmCTqfkvaE" Name="Create" ParticipatingElements="FAo52rzv5tmNEXxd7nKcOx" />
-            <Patch Id="Ne1mCwidB3zLTsO5TIHne3" Name="Update">
-              <Pin Id="VDuEzKwWASaQdFmH4yr7Ia" Name="Subsampling 1" Kind="InputPin" />
-              <Pin Id="QclpesmrSWqPoiS32vyKea" Name="Subsampling 2" Kind="InputPin" />
-              <Pin Id="HrEiPuydl7sLaRyGjoXARP" Name="supported Modes" Kind="OutputPin" />
-              <Pin Id="U6Y2VSrSVHcPZdxh0OPe2V" Name="current binning" Kind="OutputPin" Bounds="583,2084" />
-              <Pin Id="QH0RRIcNEhiNEFC7t0tGOK" Name="trigger" Kind="InputPin" />
-            </Patch>
             <ProcessDefinition Id="EscomzDZdePPwSR9IH7x6D" HasStateOut="true">
               <Fragment Id="LWyIBX13lkEOC0XlQOon7V" Patch="P5TEAVbaHgzOvmCTqfkvaE" Enabled="true" />
               <Fragment Id="MQICZ2KtBjQOoIK1hv4YNN" Patch="Ne1mCwidB3zLTsO5TIHne3" Enabled="true" />
@@ -14051,13 +14043,6 @@
               <Fragment Id="Q836o4G2001MZ7ZKGW7Scm" Patch="PH9b6gpBd27Lw3EKxIMRqI" />
               <Fragment Id="QgHforMs3DqNldL4Q1l2wD" Patch="PO4wjZ5pE3BPjrcTsJsNBd" />
             </ProcessDefinition>
-            <Patch Id="UjyxPoAgrJnNAH04Llj4Nf" Name="ApplyFeature" ParticipatingElements="EPzjLbqTMyWLxcxAHxe8TH,PS2W5dmR91DPRYHWmdtJdX,It6Yr1N717MQTyBWLYXk7G">
-              <Pin Id="LhzsAcC3ekzO85aVtDQOSh" MergeId="52429" Name="Camera" Kind="InputPin" />
-              <Pin Id="O44erlhW2IDLChkMAnowVJ" MergeId="52431" Name="Number Of Sequence Buffers" Kind="InputPin" />
-            </Patch>
-            <Patch Id="PH9b6gpBd27Lw3EKxIMRqI" Name="GetWidget" ParticipatingElements="FBn9kFCYOokQNatks95M8o,FraaHjDnEw8Megew9M30Tj">
-              <Pin Id="JVuAoBMhqtmMRul8x0UwyS" MergeId="52502" Name="UIWidget" Kind="OutputPin" />
-            </Patch>
             <Slot Id="L3GqxVAfIvZOx2EyRKMZ6Y" Name="status" />
             <Link Id="OhjWkCCcF6mNuj5Lhw7B9v" Ids="LhzsAcC3ekzO85aVtDQOSh,IdkxDtgyJ6GLLsTckRE6VX" IsHidden="true" />
             <Link Id="OouysiVG4zzPDOefatzL8j" Ids="O44erlhW2IDLChkMAnowVJ,OFT1BtSWIv6NjDa45nx0va" IsHidden="true" />
@@ -14105,14 +14090,14 @@
             <Link Id="KPxc1JO67doPv9VJLgXO0V" Ids="LhzsAcC3ekzO85aVtDQOSh,IECsHj5nz0zNvtfqWJDZ3l" IsHidden="true" />
             <Link Id="KyOlzsNJpaJP3D4s3XigzV" Ids="IECsHj5nz0zNvtfqWJDZ3l,CuA70VvjTyoMMkUniK9S0i" />
             <Slot Id="Uf5ivOcmo6FN3mqXwSHi6o" Name="target 1">
-              <p:TypeAnnotation>
+              <p:TypeAnnotation p:Type="TypeReference">
                 <Choice Kind="TypeFlag" Name="BinningMode" />
               </p:TypeAnnotation>
             </Slot>
             <Link Id="FPR6ii7GfY4Mf86Ggsum7d" Ids="P1SPOj0Zgj4NV2518XPSIy,AhAEA3zutPRNzD9gKxz3yz" />
             <Link Id="Emo3OIXUnUCPSs895PmNKj" Ids="QclpesmrSWqPoiS32vyKea,P1SPOj0Zgj4NV2518XPSIy" IsHidden="true" />
             <Slot Id="EjvqYhZMHAfOiFQ8vQLwhE" Name="target 2">
-              <p:TypeAnnotation>
+              <p:TypeAnnotation p:Type="TypeReference">
                 <Choice Kind="TypeFlag" Name="BinningMode" />
               </p:TypeAnnotation>
             </Slot>
@@ -14167,6 +14152,21 @@
             <Link Id="I4aTqdEqi7qLvcFWUJpmiD" Ids="HbUxqkxTJVbOExkWBQ8EaM,VS1KT9uQqAaQTJypbhomaU" />
             <Link Id="BwPQq5EkjJTPDFoiFrofTb" Ids="QH0RRIcNEhiNEFC7t0tGOK,HbUxqkxTJVbOExkWBQ8EaM" IsHidden="true" />
             <Link Id="OSKOHhdrERCPAmaOrYtPFY" Ids="VS1KT9uQqAaQTJypbhomaU,V8gIgYgmCzOPDbRUKcO4IZ" />
+            <Patch Id="P5TEAVbaHgzOvmCTqfkvaE" Name="Create" ParticipatingElements="FAo52rzv5tmNEXxd7nKcOx" />
+            <Patch Id="Ne1mCwidB3zLTsO5TIHne3" Name="Update">
+              <Pin Id="QH0RRIcNEhiNEFC7t0tGOK" Name="trigger" Kind="InputPin" />
+              <Pin Id="VDuEzKwWASaQdFmH4yr7Ia" Name="Subsampling 1" Kind="InputPin" />
+              <Pin Id="QclpesmrSWqPoiS32vyKea" Name="Subsampling 2" Kind="InputPin" />
+              <Pin Id="HrEiPuydl7sLaRyGjoXARP" Name="supported Modes" Kind="OutputPin" />
+              <Pin Id="U6Y2VSrSVHcPZdxh0OPe2V" Name="current binning" Kind="OutputPin" Bounds="583,2084" />
+            </Patch>
+            <Patch Id="UjyxPoAgrJnNAH04Llj4Nf" Name="ApplyFeature" ParticipatingElements="EPzjLbqTMyWLxcxAHxe8TH,PS2W5dmR91DPRYHWmdtJdX,It6Yr1N717MQTyBWLYXk7G">
+              <Pin Id="LhzsAcC3ekzO85aVtDQOSh" MergeId="52429" Name="Camera" Kind="InputPin" />
+              <Pin Id="O44erlhW2IDLChkMAnowVJ" MergeId="52431" Name="Number Of Sequence Buffers" Kind="InputPin" />
+            </Patch>
+            <Patch Id="PH9b6gpBd27Lw3EKxIMRqI" Name="GetWidget" ParticipatingElements="FBn9kFCYOokQNatks95M8o,FraaHjDnEw8Megew9M30Tj">
+              <Pin Id="JVuAoBMhqtmMRul8x0UwyS" MergeId="52502" Name="UIWidget" Kind="OutputPin" />
+            </Patch>
           </Patch>
         </Node>
         <!--
@@ -14682,34 +14682,12 @@
                 </Patch>
               </Node>
             </Canvas>
-            <Patch Id="Ls5uRhUvAaOMvVx5b7xsJH" Name="Create" ParticipatingElements="E2IcyXojhPfLejhnwZ14RS" />
-            <Patch Id="JVw9kGQZ8SAPo9mYwnyXMf" Name="Update">
-              <Pin Id="GDieDfrhC0dLadIdfSqtPE" Name="Gamma" Kind="InputPin" DefaultValue="100">
-                <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
-                  <Choice Kind="TypeFlag" Name="Float32" />
-                </p:TypeAnnotation>
-              </Pin>
-              <Pin Id="NzYfQJe3GTKLyeS2rfBlpR" Name="Status" Kind="OutputPin" />
-              <Pin Id="Iu2F6vv4uRbL8S3oz2Dn7R" Name="current Gamma" Kind="OutputPin" />
-              <Pin Id="VLTehfXQGgePohpUQnfbtb" Name="Min" Kind="OutputPin" Bounds="596,1582" />
-              <Pin Id="Hqq8H1SeCctNUVXBqTxCcU" Name="Max" Kind="OutputPin" Bounds="673,1575" />
-              <Pin Id="VGuQ8E0SxibP4zQCWERgHK" Name="Enable Hardware Gamma" Kind="InputPin" Bounds="1124,574" />
-              <Pin Id="PP2MzuCWTXALXDXKtVtjht" Name="Gamma Hardware Enabled" Kind="OutputPin" />
-              <Pin Id="SxC2mcofyhBLl4nZ283R1k" Name="Gamma Hardare Supported" Kind="OutputPin" />
-            </Patch>
             <ProcessDefinition Id="U799ccNSTkBO3u1Xby1Fle" HasStateOut="true">
               <Fragment Id="MRWgPttPGHKMNyzrhAuo3A" Patch="Ls5uRhUvAaOMvVx5b7xsJH" Enabled="true" />
               <Fragment Id="GV4k52oVEDhN6ojWC9u29x" Patch="JVw9kGQZ8SAPo9mYwnyXMf" Enabled="true" />
               <Fragment Id="AMTA1PZaRUEQIFZxTo7u52" Patch="EMnHVE2f0wsNCaVfrCWr1d" />
               <Fragment Id="HKsnKFacSsxO2jfQlM8eFM" Patch="HXeiiDgDeLdQAbSFBBOji8" />
             </ProcessDefinition>
-            <Patch Id="EMnHVE2f0wsNCaVfrCWr1d" Name="ApplyFeature" ParticipatingElements="DQzfJ6rhawWMNVRb1Gb2dc,CWpJdRk1yytLSVZ1EuvSZP,DfRnkd2tyGuNQnFuuc6IYl,NHCrzAeni9WPqoRDshZGon,RX10UmKmXycPEbLKs87aLL,HiiOZ9U10NfMrU9Cu2Ty0u,Jwxl2C9XtkGMuYjF2BNGzh,Dd9p12Vtc1bMZ2xI7yzt33,EJu0vvyqRiWMeObqRlWrVk">
-              <Pin Id="UeSSPMOgE19N5dYe6pzSQJ" MergeId="52429" Name="Camera" Kind="InputPin" />
-              <Pin Id="BrR0Or1hM4fLnQ4Wtv1qmN" MergeId="52431" Name="Number Of Sequence Buffers" Kind="InputPin" />
-            </Patch>
-            <Patch Id="HXeiiDgDeLdQAbSFBBOji8" Name="GetWidget" ParticipatingElements="UTN4InH1mHZPOwVEvxGIXM">
-              <Pin Id="Ioy4azbAz8hQBg5Etg2BNB" MergeId="52502" Name="UIWidget" Kind="OutputPin" />
-            </Patch>
             <Slot Id="VDvLq1tN38fLVqpCkvGXRd" Name="SliderValue" />
             <Slot Id="E5PjjgRKunbMvBYng7AWfb" Name="status" />
             <Link Id="LOHNcKaQK0jLQHjxow0k2a" Ids="UeSSPMOgE19N5dYe6pzSQJ,UyUWmgapUQ8LEZdftM1lM2" IsHidden="true" />
@@ -14763,7 +14741,7 @@
             <Link Id="Aq9r6gI3J7XPgMaGUiNILA" Ids="ANuv33YI7TdOG1G1rWVeYg,Hqq8H1SeCctNUVXBqTxCcU" IsHidden="true" />
             <Slot Id="OiaKGqE0wn5OEPgiNNj0H4" Name="current Gamma" />
             <Slot Id="LsYzz8WHtCyNy8Rhnlpsum" Name="target Gamma">
-              <p:TypeAnnotation>
+              <p:TypeAnnotation p:Type="TypeReference">
                 <Choice Kind="TypeFlag" Name="Float32" />
               </p:TypeAnnotation>
             </Slot>
@@ -14831,6 +14809,28 @@
             <Link Id="MK2gIoA4Fk4OVE7Jf3dImg" Ids="Avwao1Mns0bOHUpuVGzh1H,MJsBa714A6FOveKV2Rmxm3" />
             <Link Id="DL16uCfCnnaMpG4DUS89RE" Ids="L3l8Nibtki5OatdsYWiQrU,TKYKXTRkHozM2TYQNrDF9W" />
             <Link Id="BMAp0wfZ049OkZ4QziklFj" Ids="FEL7zg87VwrLAjpZFlLkUA,IdYjj72KEBQMMK6RqLBKIo" />
+            <Patch Id="Ls5uRhUvAaOMvVx5b7xsJH" Name="Create" ParticipatingElements="E2IcyXojhPfLejhnwZ14RS" />
+            <Patch Id="JVw9kGQZ8SAPo9mYwnyXMf" Name="Update">
+              <Pin Id="VGuQ8E0SxibP4zQCWERgHK" Name="Enable Hardware Gamma" Kind="InputPin" Bounds="1124,574" />
+              <Pin Id="GDieDfrhC0dLadIdfSqtPE" Name="Gamma" Kind="InputPin" DefaultValue="100">
+                <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+                  <Choice Kind="TypeFlag" Name="Float32" />
+                </p:TypeAnnotation>
+              </Pin>
+              <Pin Id="NzYfQJe3GTKLyeS2rfBlpR" Name="Status" Kind="OutputPin" />
+              <Pin Id="Iu2F6vv4uRbL8S3oz2Dn7R" Name="current Gamma" Kind="OutputPin" />
+              <Pin Id="VLTehfXQGgePohpUQnfbtb" Name="Min" Kind="OutputPin" Bounds="596,1582" />
+              <Pin Id="Hqq8H1SeCctNUVXBqTxCcU" Name="Max" Kind="OutputPin" Bounds="673,1575" />
+              <Pin Id="SxC2mcofyhBLl4nZ283R1k" Name="Gamma Hardare Supported" Kind="OutputPin" />
+              <Pin Id="PP2MzuCWTXALXDXKtVtjht" Name="Gamma Hardware Enabled" Kind="OutputPin" />
+            </Patch>
+            <Patch Id="EMnHVE2f0wsNCaVfrCWr1d" Name="ApplyFeature" ParticipatingElements="DQzfJ6rhawWMNVRb1Gb2dc,CWpJdRk1yytLSVZ1EuvSZP,DfRnkd2tyGuNQnFuuc6IYl,NHCrzAeni9WPqoRDshZGon,RX10UmKmXycPEbLKs87aLL,HiiOZ9U10NfMrU9Cu2Ty0u,Jwxl2C9XtkGMuYjF2BNGzh,Dd9p12Vtc1bMZ2xI7yzt33,EJu0vvyqRiWMeObqRlWrVk">
+              <Pin Id="UeSSPMOgE19N5dYe6pzSQJ" MergeId="52429" Name="Camera" Kind="InputPin" />
+              <Pin Id="BrR0Or1hM4fLnQ4Wtv1qmN" MergeId="52431" Name="Number Of Sequence Buffers" Kind="InputPin" />
+            </Patch>
+            <Patch Id="HXeiiDgDeLdQAbSFBBOji8" Name="GetWidget" ParticipatingElements="UTN4InH1mHZPOwVEvxGIXM">
+              <Pin Id="Ioy4azbAz8hQBg5Etg2BNB" MergeId="52502" Name="UIWidget" Kind="OutputPin" />
+            </Patch>
           </Patch>
         </Node>
         <!--
@@ -15168,7 +15168,7 @@
             <Link Id="NB4lcj8Al09QQ19iffbTHU" Ids="QjHx8TqexsKPGwsVeAFQ1l,SkrhOVJ4u7aPw1nxD5Jk4Q" />
             <Link Id="PS4J6x1c7lVMeIEK7IlydP" Ids="ARApxHqpUkIL8qpoTiZ4X8,IcpbAAoe9yiNfpRaU8YCZu" />
             <Slot Id="VYz7hWPLq1sNxhWLLPJzcZ" Name="target Value">
-              <p:TypeAnnotation>
+              <p:TypeAnnotation p:Type="TypeReference">
                 <Choice Kind="TypeFlag" Name="Float32" />
               </p:TypeAnnotation>
             </Slot>
@@ -15554,21 +15554,6 @@
                 <Pin Id="UzxrleektcKOqqFBynxLAE" Name="Output" Kind="OutputPin" />
               </Node>
             </Canvas>
-            <Patch Id="TGpUkJrDgurO3BMUyjc3wI" Name="Create" ParticipatingElements="LOFA3AFk2KQOZJZmjmyhXX,IVNxdNXMTkXLsAhCzpwD6S,CKAFcXWTMsLLslv1IjssBe,O1MCB3HwWGyPpJLWjymWsP,Cg4PDgnnt6ONmMreQ1UssC,Idh2MfssFC3PViHSFRcFPX,FRvAkzilZiNNGnSYkUDvab,K5ZLmVZUE5YOV5QZ5VhZWK,JAfwlzDRv1sOSjah5q91ZY" />
-            <Patch Id="GDWRHtzd3a4LZKJ9Y5M9NB" Name="Update">
-              <Pin Id="Si3KmaM2hGAMJax2LYw1Qe" Name="current Pixelclock" Kind="OutputPin" />
-              <Pin Id="Gf1MSV3wo5CNKzw0DNWacw" Name="status" Kind="OutputPin" />
-              <Pin Id="LOdPtUmiJnaPpRQVVwyInO" Name="Enabled" Kind="InputPin" Bounds="1241,1164">
-                <p:TypeAnnotation>
-                  <Choice Kind="TypeFlag" Name="Boolean" />
-                </p:TypeAnnotation>
-              </Pin>
-              <Pin Id="PJrx8cHnfOzMhRmFX10DOo" Name="Supported" Kind="OutputPin" Bounds="376,669" />
-            </Patch>
-            <Patch Id="IGaq0PIw2NkN16KWDVZIK6" Name="ApplyFeature" ParticipatingElements="FwSkQ9hkkejNgUU5DCjjMZ,LfVV8HlKgZbLiftyl2SpqT,M7dFFqSDkNHPW0ExNZ23fI,S4uAHn3QxCzOZ3omkRpCQt">
-              <Pin Id="MHyw6SdMzPpQTBjeINrIhn" MergeId="250771" Name="Camera" Kind="InputPin" />
-              <Pin Id="Mmr05UOTf84OskgURl2OCB" MergeId="250772" Name="Number Of Sequence Buffers" Kind="InputPin" />
-            </Patch>
             <Link Id="PZowTmVI5uwLK2Z0hTRmTF" Ids="MHyw6SdMzPpQTBjeINrIhn,IAIPW4piMnkOTM1Fo9FZ4B" IsHidden="true" />
             <Link Id="Lgc8M3fO2wtO8P4dlAWfwt" Ids="Mmr05UOTf84OskgURl2OCB,IzSGdj5GYbgOrnHG5pjAW0" IsHidden="true" />
             <Link Id="GKUKt7rfugyMeyUSVtrkrp" Ids="IAIPW4piMnkOTM1Fo9FZ4B,HJSgb96RY0WPFJ9GG0I3Ub" />
@@ -15576,9 +15561,6 @@
             <Slot Id="KZE6l7UqLFPL2UDviwnV38" Name="status" />
             <Link Id="VsR0KgTdchSLUzPA8DMte0" Ids="V1vMNWFhxwYM6haKAAqyxA,Py0A3h33lSCPySHyBQMenx" />
             <Link Id="DJs2NburwEgPB5enybrlBU" Ids="Py0A3h33lSCPySHyBQMenx,Gf1MSV3wo5CNKzw0DNWacw" IsHidden="true" />
-            <Patch Id="MXVo6NrTvXGMTcxZSEWLPa" Name="GetWidget" ParticipatingElements="I4oLLVHKIBiP13xfqgU5pz,G7yrgOzSTGkMCqkTyH9iq8,FhkT6dzirpsNLNXvXtY2Mz,JBlPJhZzNa3M4NW7Tnps5c,C2ob3gdsUNlLXrjwL1SGgb,FKowAoUINIlM645CYv0Wop,PhbbtZdr5NfN5BJnv7oSLB">
-              <Pin Id="QSLvTNm7lrcLJOMUnNn5Ut" MergeId="343653" Name="UIWidget" Kind="OutputPin" />
-            </Patch>
             <Link Id="QmyVjIi91UqQMj5Esck1s3" Ids="LrJii7Zq5QhPnnO9Z4XZFD,QSLvTNm7lrcLJOMUnNn5Ut" IsHidden="true" />
             <Slot Id="KA7FoKsD3GNNjygTF8leJF" Name="current PixelClockExtended" />
             <Link Id="H0uC9xnAsteOA6DQKe0Mfc" Ids="To7VZqkuYO0MWPJe7LVQm9,Uc1O7nTXvuLMkkEJKTQ0oy" />
@@ -15650,6 +15632,24 @@
             <Link Id="B5YTITzMYQYPAKl9PgGbPF" Ids="JJbii0aDi2mNAvMsPGWMEs,VXEkiKt5WbWPSuJyCzHisu" />
             <Link Id="KrAs7zgnUgKQSgScqm2c5m" Ids="GsJnewCLf1wNkeT0XITNtb,UeaTTXwzyPPO7YwWwRcpAR" />
             <Link Id="Vqzgq0IfFCtPDJz8RkweYO" Ids="UzxrleektcKOqqFBynxLAE,Enym4xVyzYKOYydTPHyjAu" />
+            <Patch Id="TGpUkJrDgurO3BMUyjc3wI" Name="Create" ParticipatingElements="LOFA3AFk2KQOZJZmjmyhXX,IVNxdNXMTkXLsAhCzpwD6S,CKAFcXWTMsLLslv1IjssBe,O1MCB3HwWGyPpJLWjymWsP,Cg4PDgnnt6ONmMreQ1UssC,Idh2MfssFC3PViHSFRcFPX,FRvAkzilZiNNGnSYkUDvab,K5ZLmVZUE5YOV5QZ5VhZWK,JAfwlzDRv1sOSjah5q91ZY" />
+            <Patch Id="GDWRHtzd3a4LZKJ9Y5M9NB" Name="Update">
+              <Pin Id="LOdPtUmiJnaPpRQVVwyInO" Name="Enabled" Kind="InputPin" Bounds="1241,1164">
+                <p:TypeAnnotation>
+                  <Choice Kind="TypeFlag" Name="Boolean" />
+                </p:TypeAnnotation>
+              </Pin>
+              <Pin Id="Si3KmaM2hGAMJax2LYw1Qe" Name="current Pixelclock" Kind="OutputPin" />
+              <Pin Id="PJrx8cHnfOzMhRmFX10DOo" Name="Supported" Kind="OutputPin" Bounds="376,669" />
+              <Pin Id="Gf1MSV3wo5CNKzw0DNWacw" Name="status" Kind="OutputPin" />
+            </Patch>
+            <Patch Id="IGaq0PIw2NkN16KWDVZIK6" Name="ApplyFeature" ParticipatingElements="FwSkQ9hkkejNgUU5DCjjMZ,LfVV8HlKgZbLiftyl2SpqT,M7dFFqSDkNHPW0ExNZ23fI,S4uAHn3QxCzOZ3omkRpCQt">
+              <Pin Id="MHyw6SdMzPpQTBjeINrIhn" MergeId="250771" Name="Camera" Kind="InputPin" />
+              <Pin Id="Mmr05UOTf84OskgURl2OCB" MergeId="250772" Name="Number Of Sequence Buffers" Kind="InputPin" />
+            </Patch>
+            <Patch Id="MXVo6NrTvXGMTcxZSEWLPa" Name="GetWidget" ParticipatingElements="I4oLLVHKIBiP13xfqgU5pz,G7yrgOzSTGkMCqkTyH9iq8,FhkT6dzirpsNLNXvXtY2Mz,JBlPJhZzNa3M4NW7Tnps5c,C2ob3gdsUNlLXrjwL1SGgb,FKowAoUINIlM645CYv0Wop,PhbbtZdr5NfN5BJnv7oSLB">
+              <Pin Id="QSLvTNm7lrcLJOMUnNn5Ut" MergeId="343653" Name="UIWidget" Kind="OutputPin" />
+            </Patch>
           </Patch>
         </Node>
         <Canvas Id="Bof98xOajqlOEKOs9jJrF7" Name="internal" Position="471,247">
@@ -15991,19 +15991,6 @@
                     </p:TypeAnnotation>
                   </Pad>
                 </Canvas>
-                <Patch Id="VuPNSG0ajpcPQNQZwXSIk6" Name="Create" ParticipatingElements="AjSbmVuNSuAQYurpcGj8YM,QE9azuFXZ23NUdt0kCAzF7,DzuWqhdrTt3NgmHw4n1MbO,K5SxQhAHKMOPrAfftyUWXA,AuISpsXb06MLXs7HeXIvIh,Ax68vo24nVzLdjeAde3iOx,COsG4G3l2o5N1FdlbdWO1g,Cxr93oKsJCnLSot7SKS4D8,PQtniXiISELQchdq68dXTt,K8TLKnS0SeZL22UNmqTity,UuvQI57qviNOmSTGXDdSNV,HiZD5NvqOmXMRiS77HZ9PI">
-                  <Pin Id="OVZMM7v67wBN3kFkg1gyA0" Name="Headline" Kind="InputPin" />
-                </Patch>
-                <Patch Id="MRMUjBuAEPbMeKUXua40Xz" Name="Update" ParticipatingElements="DTfIY8BfXu0N4phDpAEiZ2,TgOCWxZ7EpwOIJTZ7dzPAL,KKlDAPJR1ojOVZDJNeP43I,HIS6RyGFRDYQBX98W5ZEqq">
-                  <Pin Id="B9iOUQuv6xfPbqtj4ETYaz" Name="Target Value" Kind="InputPin" />
-                  <Pin Id="CiJ3UzM8lDBPUzfCFlMVm1" Name="Widget" Kind="OutputPin" Bounds="292,953" />
-                  <Pin Id="P0WTZn73mT5MRquMgqS8En" Name="Current Value" Kind="InputPin" Bounds="526,490" />
-                  <Pin Id="Ps46L0LZZ4yLekHeCt9GSZ" Name="Max Value" Kind="InputPin" />
-                  <Pin Id="DC0zm2jM4utORjUNa3G0bo" Name="Min Value" Kind="InputPin" Bounds="531,370" />
-                  <Pin Id="FuJbwOMNZgHOPjtE5miWEA" Name="Slider Value" Kind="OutputPin" Bounds="754,475" />
-                  <Pin Id="QgJGkMewORNNHO8jPXq5kW" Name="Default Value" Kind="InputPin" Bounds="600,252" />
-                  <Pin Id="OKAv8i436WHOKe2fCYGQnU" Name="setmax" Kind="OutputPin" Bounds="506,728" />
-                </Patch>
                 <ProcessDefinition Id="J3UvWSfwuBcMwhHTduaSNq">
                   <Fragment Id="BHqGZDlHWUaNmceIkX2Wbb" Patch="VuPNSG0ajpcPQNQZwXSIk6" Enabled="true" />
                   <Fragment Id="LN7Pf7e8U19MCf0MVZMU3U" Patch="MRMUjBuAEPbMeKUXua40Xz" Enabled="true" />
@@ -16065,6 +16052,19 @@
                 <Link Id="K8TLKnS0SeZL22UNmqTity" Ids="JMkk0V4zHYbMrzUlqQ1CIQ,QHlPz9SPqmlLqA0XgXuwFB" />
                 <Link Id="UuvQI57qviNOmSTGXDdSNV" Ids="SYdUei3bESJMYYbN5tauLn,UWGvPPvstCjM38CYuin5Q2" />
                 <Link Id="HiZD5NvqOmXMRiS77HZ9PI" Ids="IKYJYwxuMtQMpR42yLBkZZ,FJk2h4nky5hOQJncTVJI4t" />
+                <Patch Id="VuPNSG0ajpcPQNQZwXSIk6" Name="Create" ParticipatingElements="AjSbmVuNSuAQYurpcGj8YM,QE9azuFXZ23NUdt0kCAzF7,DzuWqhdrTt3NgmHw4n1MbO,K5SxQhAHKMOPrAfftyUWXA,AuISpsXb06MLXs7HeXIvIh,Ax68vo24nVzLdjeAde3iOx,COsG4G3l2o5N1FdlbdWO1g,Cxr93oKsJCnLSot7SKS4D8,PQtniXiISELQchdq68dXTt,K8TLKnS0SeZL22UNmqTity,UuvQI57qviNOmSTGXDdSNV,HiZD5NvqOmXMRiS77HZ9PI">
+                  <Pin Id="OVZMM7v67wBN3kFkg1gyA0" Name="Headline" Kind="InputPin" />
+                </Patch>
+                <Patch Id="MRMUjBuAEPbMeKUXua40Xz" Name="Update" ParticipatingElements="DTfIY8BfXu0N4phDpAEiZ2,TgOCWxZ7EpwOIJTZ7dzPAL,KKlDAPJR1ojOVZDJNeP43I,HIS6RyGFRDYQBX98W5ZEqq">
+                  <Pin Id="DC0zm2jM4utORjUNa3G0bo" Name="Min Value" Kind="InputPin" Bounds="531,370" />
+                  <Pin Id="P0WTZn73mT5MRquMgqS8En" Name="Current Value" Kind="InputPin" Bounds="526,490" />
+                  <Pin Id="Ps46L0LZZ4yLekHeCt9GSZ" Name="Max Value" Kind="InputPin" />
+                  <Pin Id="QgJGkMewORNNHO8jPXq5kW" Name="Default Value" Kind="InputPin" Bounds="600,252" />
+                  <Pin Id="B9iOUQuv6xfPbqtj4ETYaz" Name="Target Value" Kind="InputPin" />
+                  <Pin Id="CiJ3UzM8lDBPUzfCFlMVm1" Name="Widget" Kind="OutputPin" Bounds="292,953" />
+                  <Pin Id="OKAv8i436WHOKe2fCYGQnU" Name="setmax" Kind="OutputPin" Bounds="506,728" />
+                  <Pin Id="FuJbwOMNZgHOPjtE5miWEA" Name="Slider Value" Kind="OutputPin" Bounds="754,475" />
+                </Patch>
               </Patch>
             </Node>
             <!--
@@ -16345,16 +16345,6 @@
                     <Pin Id="BUDA1aPIHaqN7SuoGQI5le" Name="Result" Kind="OutputPin" />
                   </Node>
                 </Canvas>
-                <Patch Id="GqzT3J5P6ExNuspDXgjGfu" Name="Create" />
-                <Patch Id="RFoRHhaEh6XNAYYKQCKWMn" Name="Update">
-                  <Pin Id="G4F9HCKodGEM1ErhCUZmoH" Name="Widget" Kind="OutputPin" Bounds="292,953" />
-                  <Pin Id="SAGH6AHrjr8MOjCI2SDnW1" Name="Name" Kind="InputPin" Bounds="194,768" />
-                  <Pin Id="PHa9siCyu4pMwKikn8dLBP" Name="Max Value" Kind="InputPin" />
-                  <Pin Id="BENkQtMrpgZQFcy47saj9T" Name="Min Value" Kind="InputPin" Bounds="531,370" />
-                  <Pin Id="HY077oV6cEYOoHA95ycA9x" Name="Slider Value" Kind="OutputPin" Bounds="754,475" />
-                  <Pin Id="RQFTpR33tJKNvGk3EU0hdq" Name="Target Rectangle" Kind="InputPin" />
-                  <Pin Id="KNL7YJrN6PPLuaNVBAymT2" Name="Current" Kind="InputPin" Bounds="634,710" />
-                </Patch>
                 <ProcessDefinition Id="S8OSJxxmLQ8NyiYFzFxO0N">
                   <Fragment Id="JfQ7lJ5qTdTO33ZHwid1YR" Patch="GqzT3J5P6ExNuspDXgjGfu" Enabled="true" />
                   <Fragment Id="D1HqVv2B5XWO28DhLeAD7k" Patch="RFoRHhaEh6XNAYYKQCKWMn" Enabled="true" />
@@ -16407,6 +16397,16 @@
                 <Link Id="MFAW1ipCQzzM2S9LUkhff3" Ids="U1WDlBUUydzMNGaC1BN7Vh,SwL06dx336oNKFDdpn8iWx" />
                 <Link Id="H0kWQiqZWqwNz3OyuS8RXv" Ids="BUDA1aPIHaqN7SuoGQI5le,N5FpIvr4IbGLHRZJzU7gIO" />
                 <Link Id="GCuhh2l7N0DO0ML36g9ht7" Ids="CW2ZqU0tUr5OoycgTy0N2b,EdszXCj9JT8NWe78M8Dn1G" />
+                <Patch Id="GqzT3J5P6ExNuspDXgjGfu" Name="Create" />
+                <Patch Id="RFoRHhaEh6XNAYYKQCKWMn" Name="Update">
+                  <Pin Id="SAGH6AHrjr8MOjCI2SDnW1" Name="Name" Kind="InputPin" Bounds="194,768" />
+                  <Pin Id="RQFTpR33tJKNvGk3EU0hdq" Name="Target Rectangle" Kind="InputPin" />
+                  <Pin Id="BENkQtMrpgZQFcy47saj9T" Name="Min Value" Kind="InputPin" Bounds="531,370" />
+                  <Pin Id="PHa9siCyu4pMwKikn8dLBP" Name="Max Value" Kind="InputPin" />
+                  <Pin Id="KNL7YJrN6PPLuaNVBAymT2" Name="Current" Kind="InputPin" Bounds="634,710" />
+                  <Pin Id="G4F9HCKodGEM1ErhCUZmoH" Name="Widget" Kind="OutputPin" Bounds="292,953" />
+                  <Pin Id="HY077oV6cEYOoHA95ycA9x" Name="Slider Value" Kind="OutputPin" Bounds="754,475" />
+                </Patch>
               </Patch>
             </Node>
             <!--
@@ -16568,13 +16568,6 @@
                     <Pin Id="D2r3YtWelu4LICKcFIFExd" Name="Result" Kind="OutputPin" />
                   </Node>
                 </Canvas>
-                <Patch Id="VOAlsThntCgO0eOniWpVkJ" Name="Create" />
-                <Patch Id="CTRz3XGCcAqOv5gWSEKvp6" Name="Update">
-                  <Pin Id="QiEmHUtWTwDL4m5RgIqi4a" Name="Widget" Kind="OutputPin" Bounds="292,953" />
-                  <Pin Id="AH1kZ0x3N1rQPZKHPx337o" Name="Current Value" Kind="InputPin" Bounds="526,490" />
-                  <Pin Id="PFNNE8Cxf6oO5AnzCocB48" Name="Name" Kind="InputPin" Bounds="194,768" />
-                  <Pin Id="JgIhPDZqCdYNDa8dcmn5zd" Name="enum input" Kind="InputPin" Bounds="300,406" />
-                </Patch>
                 <ProcessDefinition Id="JYg1nG0tdrZOMASYCzDsrp">
                   <Fragment Id="MPGiXHyNeVkNYzws1lI3eP" Patch="VOAlsThntCgO0eOniWpVkJ" Enabled="true" />
                   <Fragment Id="Ol0s1CzhyuxOGqKemXZTzw" Patch="CTRz3XGCcAqOv5gWSEKvp6" Enabled="true" />
@@ -16601,6 +16594,13 @@
                 <Link Id="JQ8wMwluJZxLZbAuq517ud" Ids="LleCr6gqHMXOI8Jln7qWmS,Ldvwu7NQUKcP25X178ptht" />
                 <Link Id="MX2531YQEz5PhuYGN9goSa" Ids="VKStoR7qsxBPNZuXsQeFfk,RbLazx0VozdNqPhjiCI0JX" />
                 <Link Id="TQ0eArcCDkzQHPfZTnwmvh" Ids="D2r3YtWelu4LICKcFIFExd,GUjlAuJs2fFOSShiDl1iBY" />
+                <Patch Id="VOAlsThntCgO0eOniWpVkJ" Name="Create" />
+                <Patch Id="CTRz3XGCcAqOv5gWSEKvp6" Name="Update">
+                  <Pin Id="PFNNE8Cxf6oO5AnzCocB48" Name="Name" Kind="InputPin" Bounds="194,768" />
+                  <Pin Id="JgIhPDZqCdYNDa8dcmn5zd" Name="enum input" Kind="InputPin" Bounds="300,406" />
+                  <Pin Id="AH1kZ0x3N1rQPZKHPx337o" Name="Current Value" Kind="InputPin" Bounds="526,490" />
+                  <Pin Id="QiEmHUtWTwDL4m5RgIqi4a" Name="Widget" Kind="OutputPin" Bounds="292,953" />
+                </Patch>
               </Patch>
             </Node>
             <!--
@@ -16878,22 +16878,6 @@
                     </p:TypeAnnotation>
                   </Pad>
                 </Canvas>
-                <Patch Id="P8UbiDLBsibLmQitZkqjPS" Name="Create" />
-                <Patch Id="PinxvSGOd9cMX61pKllf9x" Name="Update">
-                  <Pin Id="Vdf0NU5Mh5DLt4s1Y3N8TM" Name="Target Value" Kind="InputPin" />
-                  <Pin Id="Lahu8ONQkl0M7p1fIxpldT" Name="Widget" Kind="OutputPin" Bounds="292,953" />
-                  <Pin Id="NTCYKROHqv9Mlxef5pSiNp" Name="Current Value" Kind="InputPin" Bounds="526,490" />
-                  <Pin Id="T0f5AuJZjuJQKhL1Mi1qTv" Name="Name" Kind="InputPin" Bounds="194,768" />
-                  <Pin Id="UhGkDxL8cF2LszJ0Uknv7Q" Name="Selected Entry" Kind="OutputPin" Bounds="754,475">
-                    <p:TypeAnnotation>
-                      <Choice Kind="TypeFlag" Name="Integer32" />
-                    </p:TypeAnnotation>
-                  </Pin>
-                  <Pin Id="NHKb7SUrv4OPN6B5fASmKi" Name="Default Value" Kind="InputPin" Bounds="600,252" />
-                  <Pin Id="GxkzX3QkGk3MECSTxsAbL7" Name="Entries" Kind="InputPin" Bounds="662,520" />
-                  <Pin Id="UhEHqcV49RrL4t0IfoHL2A" Name="Entries Label" Kind="InputPin" Bounds="786,576" />
-                  <Pin Id="Kcv0CwgaYAyMGfIefCX6ym" Name="SetMax" Kind="OutputPin" Bounds="502,738" />
-                </Patch>
                 <ProcessDefinition Id="Cil4ZkGQdJBPDj3NlqBNcw">
                   <Fragment Id="U9gRnDtJrRWLyAlEUNNU8Q" Patch="P8UbiDLBsibLmQitZkqjPS" Enabled="true" />
                   <Fragment Id="LkmguYciLDxNuuZK3aGpEL" Patch="PinxvSGOd9cMX61pKllf9x" Enabled="true" />
@@ -16942,6 +16926,22 @@
                 <Link Id="PFysXpeDMbpNc7srhbeFkP" Ids="QJgiwoGSDFxQQ0fRBKRvGr,LrKd4o5JBOYMc6YrdMR5cT" />
                 <Link Id="PZfTffmR3JANiT0C0GPY7B" Ids="TrijMchLq5dOcI5KIJCPQC,LwVbSQb6BFpL4Oax9XFXet" />
                 <Link Id="NzpEXZuxW5jLR7Wv7LOKjb" Ids="A7ZeKdxogVBLfoJqGECIjZ,AG3TDClR7GmMhB8uOqPly2" />
+                <Patch Id="P8UbiDLBsibLmQitZkqjPS" Name="Create" />
+                <Patch Id="PinxvSGOd9cMX61pKllf9x" Name="Update">
+                  <Pin Id="T0f5AuJZjuJQKhL1Mi1qTv" Name="Name" Kind="InputPin" Bounds="194,768" />
+                  <Pin Id="UhEHqcV49RrL4t0IfoHL2A" Name="Entries Label" Kind="InputPin" Bounds="786,576" />
+                  <Pin Id="NTCYKROHqv9Mlxef5pSiNp" Name="Current Value" Kind="InputPin" Bounds="526,490" />
+                  <Pin Id="GxkzX3QkGk3MECSTxsAbL7" Name="Entries" Kind="InputPin" Bounds="662,520" />
+                  <Pin Id="NHKb7SUrv4OPN6B5fASmKi" Name="Default Value" Kind="InputPin" Bounds="600,252" />
+                  <Pin Id="Vdf0NU5Mh5DLt4s1Y3N8TM" Name="Target Value" Kind="InputPin" />
+                  <Pin Id="Lahu8ONQkl0M7p1fIxpldT" Name="Widget" Kind="OutputPin" Bounds="292,953" />
+                  <Pin Id="Kcv0CwgaYAyMGfIefCX6ym" Name="SetMax" Kind="OutputPin" Bounds="502,738" />
+                  <Pin Id="UhGkDxL8cF2LszJ0Uknv7Q" Name="Selected Entry" Kind="OutputPin" Bounds="754,475">
+                    <p:TypeAnnotation>
+                      <Choice Kind="TypeFlag" Name="Integer32" />
+                    </p:TypeAnnotation>
+                  </Pin>
+                </Patch>
               </Patch>
             </Node>
             <!--
@@ -17341,18 +17341,6 @@
                     </p:TypeAnnotation>
                   </Pad>
                 </Canvas>
-                <Patch Id="HrRkumBEF3zPSysu6JRxgl" Name="Create" ParticipatingElements="Dj0Df5p9K3EL1S69s74ekH,EVM2oPasVjXLQSlud82s7g,BanHusPynDSMl47UePkKAQ,PoI43zJZcj0QTcz8Bv8eDD,CO1bWmYZAmfOrUEe2Ka3y9,PTerISa4D2JNmIku5RtnOo,BZcY5mYhisgMLBpQwDqrLT,RIH5FHAmltXPRxlDN3MF8S,LLnHyCpSjISLgFIPzg2aLL,CemEKPp5xt0PzJcVRc6x3R,E0eaNizxGOfP2Bt4XhxYhz,QkTC7hLa1IKPfsVDFMrwnE">
-                  <Pin Id="IxHhxomb76EMe7GtqTBc8z" Name="Headline" Kind="InputPin" />
-                </Patch>
-                <Patch Id="JT1Or2LMUPLQHQCQ3eftD4" Name="Update">
-                  <Pin Id="RMUmyrnEJ4mPQC97KQjP8P" Name="Enum 1" Kind="InputPin" />
-                  <Pin Id="OyX8CKxOESBNQmUOBDVCjx" Name="Enum 2" Kind="InputPin" />
-                  <Pin Id="EsS1Uii2pQNPsUThuw8YIa" Name="Output" Kind="OutputPin" Bounds="745,913" />
-                  <Pin Id="UQ4g9fbKGm5OSlCkAk0TBJ" Name="supported Modes" Kind="InputPin" Bounds="668,415" />
-                  <Pin Id="FcC8Iy7BzliOjfEVshTZhr" Name="Value 2" Kind="OutputPin" Bounds="1007,559" />
-                  <Pin Id="F2nMV9VbPtGNCmOBUM3bU0" Name="Value 1" Kind="OutputPin" Bounds="958,608" />
-                  <Pin Id="Q13PJUuJVIsPPNbiGlIqdh" Name="current Value" Kind="InputPin" Bounds="914,674" />
-                </Patch>
                 <ProcessDefinition Id="OpMwkpeyQgbNCDQR3Ep8CI">
                   <Fragment Id="BwXt7Zs4QgnLMpHQB5PQDH" Patch="HrRkumBEF3zPSysu6JRxgl" Enabled="true" />
                   <Fragment Id="IhhQjcXw3RYOjRMbiF6gXP" Patch="JT1Or2LMUPLQHQCQ3eftD4" Enabled="true" />
@@ -17411,6 +17399,18 @@
                 <Link Id="Qfcixn8niopOIpPcJ7dH3U" Ids="MATNV0RCawBMEvVPDF81fS,DhzVBKRuGZHQCLbyqFZ9tO" />
                 <Link Id="ImbfQlIf0dGL04aSF4z7aJ" Ids="O9aRCpc2BqmPrvPVF9C8wo,NZehJaRBa3CNdcyopDFbCU" />
                 <Link Id="A57envXBknAMohukmM90K1" Ids="Lydy6Nk3MjxLeiUG4y58sV,TMaMumX0V7cOOBYJouZyi7" />
+                <Patch Id="HrRkumBEF3zPSysu6JRxgl" Name="Create" ParticipatingElements="Dj0Df5p9K3EL1S69s74ekH,RIH5FHAmltXPRxlDN3MF8S,EVM2oPasVjXLQSlud82s7g,BanHusPynDSMl47UePkKAQ,PoI43zJZcj0QTcz8Bv8eDD,CO1bWmYZAmfOrUEe2Ka3y9,LLnHyCpSjISLgFIPzg2aLL,CemEKPp5xt0PzJcVRc6x3R,PTerISa4D2JNmIku5RtnOo,BZcY5mYhisgMLBpQwDqrLT,E0eaNizxGOfP2Bt4XhxYhz,QkTC7hLa1IKPfsVDFMrwnE">
+                  <Pin Id="IxHhxomb76EMe7GtqTBc8z" Name="Headline" Kind="InputPin" />
+                </Patch>
+                <Patch Id="JT1Or2LMUPLQHQCQ3eftD4" Name="Update">
+                  <Pin Id="RMUmyrnEJ4mPQC97KQjP8P" Name="Enum 1" Kind="InputPin" />
+                  <Pin Id="Q13PJUuJVIsPPNbiGlIqdh" Name="current Value" Kind="InputPin" Bounds="914,674" />
+                  <Pin Id="OyX8CKxOESBNQmUOBDVCjx" Name="Enum 2" Kind="InputPin" />
+                  <Pin Id="UQ4g9fbKGm5OSlCkAk0TBJ" Name="supported Modes" Kind="InputPin" Bounds="668,415" />
+                  <Pin Id="EsS1Uii2pQNPsUThuw8YIa" Name="Output" Kind="OutputPin" Bounds="745,913" />
+                  <Pin Id="F2nMV9VbPtGNCmOBUM3bU0" Name="Value 1" Kind="OutputPin" Bounds="958,608" />
+                  <Pin Id="FcC8Iy7BzliOjfEVshTZhr" Name="Value 2" Kind="OutputPin" Bounds="1007,559" />
+                </Patch>
               </Patch>
             </Node>
             <!--
@@ -17540,14 +17540,6 @@
                     </p:TypeAnnotation>
                   </Pad>
                 </Canvas>
-                <Patch Id="USNHRDyJ7NDN64ocVg9zXh" Name="Create" ParticipatingElements="CCFXjRimlPCP8MVVqRsPad,ClJ53xNOu6FNlZfsHeoj4s,RlulT9Z01w8NP7IhgP4kOX,IO4zrjMgkU4PKJWt2bAdxM,Vh8rubJYxU6Nv2QtmYcMlj,RdacPkqSwycLzxmQhJd4hs" />
-                <Patch Id="I2UI23KiFg9MjL8E4w15LI" Name="Update">
-                  <Pin Id="A7EKz2UbdrALLeJ24P8XkB" Name="Trigger" Kind="InputPin" Bounds="1445,524" />
-                  <Pin Id="Kl1SrUcXJkfM5hYgg0Y9Fl" Name="Headline" Kind="InputPin" Bounds="571,526" />
-                  <Pin Id="VJv6L6hmMsTL0sOyZ3UTFe" Name="TextLabels" Kind="InputPin" Bounds="555,622" />
-                  <Pin Id="CL142NGgSXvPSR3t4A393S" Name="Value" Kind="OutputPin" Bounds="754,587" />
-                  <Pin Id="ReJV8BHp5DgM58H9AmJXdx" Name="Output" Kind="OutputPin" Bounds="517,717" />
-                </Patch>
                 <ProcessDefinition Id="HYPvqnfQTBtQQlHuDcnvL4">
                   <Fragment Id="QlnxcLS4tt0PPdytWBu4hG" Patch="USNHRDyJ7NDN64ocVg9zXh" Enabled="true" />
                   <Fragment Id="I9OGwIdGxknLTb50f8pwmR" Patch="I2UI23KiFg9MjL8E4w15LI" Enabled="true" />
@@ -17572,6 +17564,14 @@
                 <Link Id="IO4zrjMgkU4PKJWt2bAdxM" Ids="J5qvXx2tjXTNMAB74AGUOR,EUytRc3FRGJNuaIgRof5iA" />
                 <Link Id="Vh8rubJYxU6Nv2QtmYcMlj" Ids="GKIBz96rs0VLyrDiVMNiY0,M9jgrNidHogLjv8OCDL8Mo" />
                 <Link Id="RdacPkqSwycLzxmQhJd4hs" Ids="VQ0peS5muBuLvmjbBK2QW8,Nupzo00Nqb5PERCGsZ1I6q" />
+                <Patch Id="USNHRDyJ7NDN64ocVg9zXh" Name="Create" ParticipatingElements="CCFXjRimlPCP8MVVqRsPad,ClJ53xNOu6FNlZfsHeoj4s,RlulT9Z01w8NP7IhgP4kOX,IO4zrjMgkU4PKJWt2bAdxM,Vh8rubJYxU6Nv2QtmYcMlj,RdacPkqSwycLzxmQhJd4hs" />
+                <Patch Id="I2UI23KiFg9MjL8E4w15LI" Name="Update">
+                  <Pin Id="VJv6L6hmMsTL0sOyZ3UTFe" Name="TextLabels" Kind="InputPin" Bounds="555,622" />
+                  <Pin Id="Kl1SrUcXJkfM5hYgg0Y9Fl" Name="Headline" Kind="InputPin" Bounds="571,526" />
+                  <Pin Id="A7EKz2UbdrALLeJ24P8XkB" Name="Trigger" Kind="InputPin" Bounds="1445,524" />
+                  <Pin Id="ReJV8BHp5DgM58H9AmJXdx" Name="Output" Kind="OutputPin" Bounds="517,717" />
+                  <Pin Id="CL142NGgSXvPSR3t4A393S" Name="Value" Kind="OutputPin" Bounds="754,587" />
+                </Patch>
               </Patch>
             </Node>
           </Canvas>
@@ -17763,6 +17763,214 @@
             </Patch>
           </Node>
         </Canvas>
+        <!--
+
+    ************************ SoftwareAutoGain ************************
+
+-->
+        <Node Name="SoftwareAutoGain" Bounds="489,460" Id="KaUEbgf2fX2QDqvKXzk7R1">
+          <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="builtin">
+            <Choice Kind="ClassDefinition" Name="Class" />
+          </p:NodeReference>
+          <p:Interfaces>
+            <TypeReference LastCategoryFullName="Devices.uEye" LastSymbolSource="VL.Devices.uEye.vl">
+              <Choice Kind="InterfaceTypeFlag" Name="IuEyeFeature" />
+            </TypeReference>
+          </p:Interfaces>
+          <Patch Id="P0f2Mx0BI6LMIXcx5nQI0U">
+            <Canvas Id="L3A5CdfeHcFOvN7nQEB2pu" CanvasType="Group">
+              <ControlPoint Id="P49A4WuyluENc11sXod3Fe" Bounds="198,201" />
+              <ControlPoint Id="FyKgZytUX0gM5sfcQliqLQ" Bounds="300,201" />
+              <ControlPoint Id="LBPi07ih9GqL8TPFVH4hCy" Bounds="935,512" />
+              <Node Bounds="184,231,353,272" Id="AcX7vZJiKvbNacKKQcxFNW">
+                <p:NodeReference LastCategoryFullName="Primitive" LastSymbolSource="VL.CoreLib.dll">
+                  <Choice Kind="StatefulRegion" Name="Region (Stateful)" Fixed="true" />
+                  <Choice Kind="ProcessStatefulRegion" Name="Cache" />
+                  <CategoryReference Kind="Category" Name="Primitive" />
+                </p:NodeReference>
+                <Pin Id="U3kQfLXuPsEMIdg7Iy7WAb" Name="Force" Kind="InputPin" />
+                <Pin Id="KPtmUr9jAUWLFQW2WNrA8I" Name="Dispose Cached Outputs" Kind="InputPin" />
+                <Pin Id="FV7Kgg3NufCPMzGmnx1HJd" Name="Has Changed" Kind="OutputPin" />
+                <Patch Id="SfXOuVeN9MNO1npScXc4RO" ManuallySortedPins="true">
+                  <Patch Id="PnTDQ0yOU7CPpIguUdrHmb" Name="Create" ManuallySortedPins="true" />
+                  <Patch Id="Uko4ZbL137zPSWoB0Q1Ov8" Name="Then" ManuallySortedPins="true" />
+                  <Node Bounds="267,300,64,26" Id="Plzf5g0XCg7Puw4mM7bEV6">
+                    <p:NodeReference LastCategoryFullName="uEye.AutoFeatures" LastSymbolSource="uEyeDotNet.dll">
+                      <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                      <CategoryReference Kind="AssemblyCategory" Name="AutoFeatures" />
+                      <Choice Kind="OperationCallFlag" Name="Software" />
+                    </p:NodeReference>
+                    <Pin Id="CuWQUv5b6WsMMA1Y3BjVJ2" Name="Input" Kind="StateInputPin" />
+                    <Pin Id="DxQqJMbJ0mhNKxXY3mr1Io" Name="Output" Kind="StateOutputPin" />
+                    <Pin Id="DIjnmiQq8MCLNGMhOHvtoV" Name="Software" Kind="OutputPin" />
+                  </Node>
+                  <Node Bounds="196,258,76,26" Id="EqBHs1x3JYbMDbGjLFQd50">
+                    <p:NodeReference LastCategoryFullName="Devices.uEye.internal.Camera" LastSymbolSource="VL.Devices.uEye.vl">
+                      <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                      <CategoryReference Kind="Category" Name="Camera" />
+                      <Choice Kind="OperationCallFlag" Name="AutoFeatures" />
+                    </p:NodeReference>
+                    <Pin Id="PTGms37TMDlNSma4r3dbts" Name="Input" Kind="StateInputPin" />
+                    <Pin Id="J17BFg0t25ELRAZlGG3WB0" Name="Output" Kind="StateOutputPin" />
+                    <Pin Id="Sp324GvmFNQQaKHsOTA1Dh" Name="Auto Features" Kind="OutputPin" />
+                  </Node>
+                  <Node Bounds="326,344,94,26" Id="R7JST50T5Q4LRx6gluWd0G">
+                    <p:NodeReference LastCategoryFullName="uEye.AutoFeaturesSoftware" LastSymbolSource="uEyeDotNet.dll">
+                      <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                      <CategoryReference Kind="AssemblyCategory" Name="AutoFeaturesSoftware" />
+                      <Choice Kind="OperationCallFlag" Name="Gain" />
+                    </p:NodeReference>
+                    <Pin Id="BuvsrxcdmuYNiHaKYBs7jY" Name="Input" Kind="StateInputPin" />
+                    <Pin Id="GcVqZjECHhYQc6WQBsqtyv" Name="Output" Kind="StateOutputPin" />
+                    <Pin Id="RZ1PUCkct5tLya2yAXItHt" Name="Gain" Kind="OutputPin" />
+                  </Node>
+                  <Node Bounds="415,391,110,26" Id="BDiuKUGhPwbLaH5ICy0rXb">
+                    <p:NodeReference LastCategoryFullName="uEye.AutoFeaturesSoftwareGain" LastSymbolSource="uEyeDotNet.dll">
+                      <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                      <CategoryReference Kind="AssemblyCategory" Name="AutoFeaturesSoftwareGain" />
+                      <Choice Kind="OperationCallFlag" Name="SetEnable" />
+                    </p:NodeReference>
+                    <Pin Id="O0iKgOgVt1gNzy1Uoo9IKQ" Name="Input" Kind="StateInputPin" />
+                    <Pin Id="JJ0rMJqFYppQHpONtmjzLy" Name="Enable" Kind="InputPin" />
+                    <Pin Id="BC2UY5rudXcN8f5bqzpMt1" Name="Output" Kind="StateOutputPin" />
+                    <Pin Id="UurUD4PnbBkObJpVkQ5lbI" Name="Result" Kind="OutputPin" />
+                  </Node>
+                  <Node Bounds="415,433,110,26" Id="LIutwaOicHOMkmV5vk4Da5">
+                    <p:NodeReference LastCategoryFullName="uEye.AutoFeaturesSoftwareGain" LastSymbolSource="uEyeDotNet.dll">
+                      <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                      <Choice Kind="OperationCallFlag" Name="GetEnable" />
+                      <CategoryReference Kind="AssemblyCategory" Name="AutoFeaturesSoftwareGain" NeedsToBeDirectParent="true" />
+                    </p:NodeReference>
+                    <Pin Id="NIcDH0bOIZVPlO1drMB0lS" Name="Input" Kind="StateInputPin" />
+                    <Pin Id="TMCUI5ihAurM41TBoGE97z" Name="Output" Kind="StateOutputPin" />
+                    <Pin Id="SRl9jZESrskLilMOSfOwIr" Name="Result" Kind="OutputPin" />
+                    <Pin Id="Rkj1I17orBSQObVZnrMZGB" Name="Enable" Kind="OutputPin" />
+                  </Node>
+                </Patch>
+                <ControlPoint Id="Fe8fWQKtVHKMdX7ygXhbUb" Bounds="198,237" Alignment="Top" />
+                <ControlPoint Id="G45GmnTM0MaMbNWnLOXeca" Bounds="479,497" Alignment="Bottom" />
+                <ControlPoint Id="A5EgTLsp7rbLhJcVoU1bqm" Bounds="522,497" Alignment="Bottom" />
+                <ControlPoint Id="SKoX2Q6rfrWMuALA2DdKv1" Bounds="521,237" Alignment="Top" />
+              </Node>
+              <Pad Id="TAQGuf9Y6oAP2DXoeONYEC" Bounds="479,534" />
+              <ControlPoint Id="ANlpDYyM3rHPLMv34K7Gyj" Bounds="479,588" />
+              <Pad Id="G4um9IaeaH3QFjX94zWnLp" Bounds="522,534" />
+              <ControlPoint Id="AclF4dcwoOdNpM8CZsGW0M" Bounds="522,570" />
+              <Node Bounds="519,192,72,19" Id="TEZUPAOuOw4MxP5brsnFXd">
+                <p:NodeReference LastCategoryFullName="Devices.uEye.uEyeFeatures.internal" LastSymbolSource="VL.Devices.uEye.vl">
+                  <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                  <Choice Kind="ProcessAppFlag" Name="PinOrWidget" />
+                </p:NodeReference>
+                <Pin Id="Q8MZ2OKiepXQKXz8SuAP1A" Name="Pin Value" Kind="InputPin" />
+                <Pin Id="LL0YWvbQGN1OkKmm46RTQ3" Name="Widget Value" Kind="InputPin" />
+                <Pin Id="A37FfEevSgcLtAPKUe3grh" Name="Widget Enabled" Kind="InputPin" />
+                <Pin Id="TY1mOR3sbKCPzI1GkjopAw" Name="Value" Kind="OutputPin" />
+              </Node>
+              <Node Bounds="934,423,65,19" Id="CBkoWMsAddMLUuC4mXaC0H">
+                <p:NodeReference LastCategoryFullName="Elementa.Widget" LastSymbolSource="VL.Elementa.Widget.Toggle.vl">
+                  <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
+                  <Choice Kind="ProcessAppFlag" Name="Toggle" />
+                  <CategoryReference Kind="Category" Name="Widget" NeedsToBeDirectParent="true" />
+                </p:NodeReference>
+                <Pin Id="HOtDsXzFjAXNto0yfAh9ol" Name="Position" Kind="InputPin" DefaultValue="0, 0" />
+                <Pin Id="KpqVrtygS61LHVjBuUOucR" Name="Size" Kind="InputPin" DefaultValue="0.8, 0.3" />
+                <Pin Id="P7B8IAZG4UxLq8qq0Al60p" Name="Display Text" Kind="InputPin" DefaultValue="Auto Gain" />
+                <Pin Id="QGFTo7rNuIxOhQ2pStJaHJ" Name="Value" Kind="InputPin" />
+                <Pin Id="FJXdcK1Av5vMAKHAWOw9AZ" Name="Output" Kind="OutputPin" />
+                <Pin Id="MItXR33WzULQXE2ZBATOK9" Name="On Interaction" Kind="OutputPin" />
+                <Pin Id="UXyVgCb1S81QECJFZrAHPs" Name="Value" Kind="OutputPin" />
+              </Node>
+              <Pad Id="NplGBGAIjWpNLdxivppvPU" SlotId="GdhM9LYIIMZLZ2wMWJr2rl" Bounds="996,484" />
+              <Pad Id="C8aRQqdaymJNVxyuprrNsC" SlotId="GdhM9LYIIMZLZ2wMWJr2rl" Bounds="554,141" />
+              <Pad Id="FFSIbpKVBPGOLMco8c2W2q" SlotId="F9RxojGFKDKPb60vDITBbp" Bounds="1019,393" />
+              <ControlPoint Id="VCxTx3babpoQOjq1oEwdY2" Bounds="1019,361" />
+              <Pad Id="Tze1jSPLF4NOzkziASGxVB" SlotId="F9RxojGFKDKPb60vDITBbp" Bounds="520,175" />
+              <Pad Id="R2JWYIg2fnJN7i3r2Gq4YC" Comment="Size" Bounds="957,324,34,28" ShowValueBox="true" isIOBox="true" Value="0.8, 0.3">
+                <p:TypeAnnotation LastCategoryFullName="2D" LastSymbolSource="CoreLibBasics.vl">
+                  <Choice Kind="TypeFlag" Name="Vector2" />
+                </p:TypeAnnotation>
+              </Pad>
+              <Pad Id="NMnHbSJdq1iPDPpQCeR67o" Bounds="974,249,35,15" ShowValueBox="true" isIOBox="true" Value="True">
+                <p:TypeAnnotation>
+                  <Choice Kind="TypeFlag" Name="Boolean" />
+                  <FullNameCategoryReference ID="Primitive" />
+                </p:TypeAnnotation>
+              </Pad>
+              <Pad Id="Lsgd7QSuRxuPlVk7WKGlMh" SlotId="QIDZc8MxWC8NxerUxsB3gt" Bounds="955,279" />
+              <Pad Id="JuYRbBCJCufLbg3NfWmjno" Comment="" Bounds="955,226,35,15" ShowValueBox="true" isIOBox="true" Value="False">
+                <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+                  <Choice Kind="TypeFlag" Name="Boolean" />
+                </p:TypeAnnotation>
+              </Pad>
+              <Pad Id="Vn4ARJnguc6M73a1iSLwXv" SlotId="QIDZc8MxWC8NxerUxsB3gt" Bounds="588,111" />
+            </Canvas>
+            <Patch Id="Q7bb6Gptiy0MufAO9lbjiY" Name="Create" ParticipatingElements="OZAJSvcpYiZQTqUggKhC5P,BSUzCfmm7tfNNyvZRcoLO0" />
+            <ProcessDefinition Id="AQdfGzn9zR2OhBFxznRmgR" HasStateOut="true">
+              <Fragment Id="BZdv6T8Nd9TPb91nJ4E07F" Patch="Q7bb6Gptiy0MufAO9lbjiY" Enabled="true" />
+              <Fragment Id="SGzNIdyMvtDMjBOPSVBfei" Patch="T0IKlXzlSrwOicDv5HvzLx" />
+              <Fragment Id="DicFlj6fFAyOU9WK9Gyljv" Patch="L01Fj3onE8BMNSILKVWLXA" />
+              <Fragment Id="IuvuMxgBetZMxf1fF2ePWm" Patch="L1H5NORitzzMvWOM4oYLFy" Enabled="true" />
+            </ProcessDefinition>
+            <Patch Id="T0IKlXzlSrwOicDv5HvzLx" Name="ApplyFeature">
+              <Pin Id="QNknelQT2bXPnz3uzkvApU" MergeId="7079" Name="Camera" Kind="InputPin">
+                <p:TypeAnnotation>
+                  <Choice Kind="TypeFlag" Name="Camera" />
+                  <FullNameCategoryReference ID="Devices.uEye.internal" />
+                </p:TypeAnnotation>
+              </Pin>
+              <Pin Id="RFHv36xZ3AnLUPsnWcq13i" MergeId="7086" Name="Number Of Sequence Buffers" Kind="InputPin">
+                <p:TypeAnnotation>
+                  <Choice Kind="TypeFlag" Name="Integer32" />
+                </p:TypeAnnotation>
+              </Pin>
+            </Patch>
+            <Patch Id="L01Fj3onE8BMNSILKVWLXA" Name="GetWidget" ParticipatingElements="FMeyODJqRCvPrPKdB6D85y,LTgQomNH7zxMneSGXikUge,VT3BnQBNxGmOIjNya9DOy2">
+              <Pin Id="J63lNFp98jVOCmvXGPKdVN" MergeId="7096" Name="UIWidget" Kind="OutputPin">
+                <p:TypeAnnotation>
+                  <Choice Kind="TypeFlag" Name="IElementum" />
+                </p:TypeAnnotation>
+              </Pin>
+            </Patch>
+            <Link Id="D07hIkcZdszNHcoWlTw7zV" Ids="QNknelQT2bXPnz3uzkvApU,P49A4WuyluENc11sXod3Fe" IsHidden="true" />
+            <Link Id="LWX6Y6xmQaiPAc1WUbMoNN" Ids="RFHv36xZ3AnLUPsnWcq13i,FyKgZytUX0gM5sfcQliqLQ" IsHidden="true" />
+            <Link Id="CkpdqDu5KzUOjqYkqttJeY" Ids="LBPi07ih9GqL8TPFVH4hCy,J63lNFp98jVOCmvXGPKdVN" IsHidden="true" />
+            <Link Id="Tg3pXCRvLCPNtWs8Qwisc9" Ids="P49A4WuyluENc11sXod3Fe,Fe8fWQKtVHKMdX7ygXhbUb" />
+            <Link Id="FDOD1aJe7RcNTaVfL4HviU" Ids="Fe8fWQKtVHKMdX7ygXhbUb,PTGms37TMDlNSma4r3dbts" />
+            <Link Id="DWIUVDtz1eWNqTYtJGWwNz" Ids="Sp324GvmFNQQaKHsOTA1Dh,CuWQUv5b6WsMMA1Y3BjVJ2" />
+            <Link Id="JDNITPZtyOOO4ym05SiXVE" Ids="DIjnmiQq8MCLNGMhOHvtoV,BuvsrxcdmuYNiHaKYBs7jY" />
+            <Link Id="VUrEgAvxDsmMoqzPpUQbXe" Ids="RZ1PUCkct5tLya2yAXItHt,O0iKgOgVt1gNzy1Uoo9IKQ" />
+            <Link Id="Jqm6FGcDXTwMPWe2NrbYPu" Ids="G45GmnTM0MaMbNWnLOXeca,TAQGuf9Y6oAP2DXoeONYEC" />
+            <Link Id="E9lVkWS8dogM4HprC4VlwO" Ids="TAQGuf9Y6oAP2DXoeONYEC,ANlpDYyM3rHPLMv34K7Gyj" />
+            <Link Id="Dp5xNOwCLRPP1ABKfp35oF" Ids="ANlpDYyM3rHPLMv34K7Gyj,QqsGXuDH7BlP65V4wmTzuj" IsHidden="true" />
+            <Patch Id="L1H5NORitzzMvWOM4oYLFy" Name="Update" ParticipatingElements="E9lVkWS8dogM4HprC4VlwO,BehEovHQWL4Mwsd1jWnTif">
+              <Pin Id="QqsGXuDH7BlP65V4wmTzuj" Name="Status" Kind="OutputPin" />
+              <Pin Id="T2x124CNMWFP588HkSfM25" Name="Enabled" Kind="OutputPin" Bounds="876,653" />
+              <Pin Id="FRCYyxMawZqPNFyacuAbGI" Name="Value" Kind="InputPin" />
+            </Patch>
+            <Link Id="U9OwyxR4eEsPGAoKNWHubU" Ids="BC2UY5rudXcN8f5bqzpMt1,NIcDH0bOIZVPlO1drMB0lS" />
+            <Link Id="GX7SJNo6CQXOcdtOH9vTMT" Ids="SRl9jZESrskLilMOSfOwIr,G45GmnTM0MaMbNWnLOXeca" />
+            <Link Id="JYLuRl6NaUsPkjtXQvCx0G" Ids="Rkj1I17orBSQObVZnrMZGB,A5EgTLsp7rbLhJcVoU1bqm" />
+            <Link Id="A5EVEIXtlAsQJ2X7VSUvLo" Ids="A5EgTLsp7rbLhJcVoU1bqm,G4um9IaeaH3QFjX94zWnLp" />
+            <Link Id="SKp8s2VXP6qNZSWdnnloUj" Ids="G4um9IaeaH3QFjX94zWnLp,AclF4dcwoOdNpM8CZsGW0M" />
+            <Link Id="VI8Z0TKUGZHPSv6WcfXnxA" Ids="AclF4dcwoOdNpM8CZsGW0M,T2x124CNMWFP588HkSfM25" IsHidden="true" />
+            <Link Id="BsxONCW17n0ME0KQuDsOhX" Ids="TY1mOR3sbKCPzI1GkjopAw,SKoX2Q6rfrWMuALA2DdKv1" />
+            <Link Id="PGVoxQXCrUrOArYc2Pfm5w" Ids="SKoX2Q6rfrWMuALA2DdKv1,JJ0rMJqFYppQHpONtmjzLy" />
+            <Link Id="A9XvFfeTHEPPRrK5AhO5ZU" Ids="FJXdcK1Av5vMAKHAWOw9AZ,LBPi07ih9GqL8TPFVH4hCy" />
+            <Link Id="L3oPl1ewlh8MJOowMJz0D0" Ids="C8aRQqdaymJNVxyuprrNsC,LL0YWvbQGN1OkKmm46RTQ3" />
+            <Slot Id="F9RxojGFKDKPb60vDITBbp" Name="Pin Value" />
+            <Link Id="FMeyODJqRCvPrPKdB6D85y" Ids="FFSIbpKVBPGOLMco8c2W2q,QGFTo7rNuIxOhQ2pStJaHJ" />
+            <Link Id="BehEovHQWL4Mwsd1jWnTif" Ids="VCxTx3babpoQOjq1oEwdY2,FFSIbpKVBPGOLMco8c2W2q" />
+            <Link Id="FA1eySOMZAiMnmglk3Z0iX" Ids="FRCYyxMawZqPNFyacuAbGI,VCxTx3babpoQOjq1oEwdY2" IsHidden="true" />
+            <Slot Id="GdhM9LYIIMZLZ2wMWJr2rl" Name="Widget Value" />
+            <Link Id="OgoTld8UpJvPuScFmJWWjS" Ids="Tze1jSPLF4NOzkziASGxVB,Q8MZ2OKiepXQKXz8SuAP1A" />
+            <Link Id="OZAJSvcpYiZQTqUggKhC5P" Ids="R2JWYIg2fnJN7i3r2Gq4YC,KpqVrtygS61LHVjBuUOucR" />
+            <Slot Id="QIDZc8MxWC8NxerUxsB3gt" Name="Widget Enabled" />
+            <Link Id="LTgQomNH7zxMneSGXikUge" Ids="NMnHbSJdq1iPDPpQCeR67o,Lsgd7QSuRxuPlVk7WKGlMh" />
+            <Link Id="BSUzCfmm7tfNNyvZRcoLO0" Ids="JuYRbBCJCufLbg3NfWmjno,Lsgd7QSuRxuPlVk7WKGlMh" />
+            <Link Id="NQtMCQGPDw2LXRlfC0lsyF" Ids="Vn4ARJnguc6M73a1iSLwXv,A37FfEevSgcLtAPKUe3grh" />
+            <Link Id="VT3BnQBNxGmOIjNya9DOy2" Ids="UXyVgCb1S81QECJFZrAHPs,NplGBGAIjWpNLdxivppvPU" />
+          </Patch>
+        </Node>
       </Canvas>
       <Canvas Id="UEVYCJi1oPmMzdwLHylmUY" Name="internal" Position="295,247">
         <!--
@@ -18154,7 +18362,7 @@
                   <Node Bounds="571,571,114,19" Id="AAFG1rFqo84MMPC6TJOC8z">
                     <p:NodeReference LastCategoryFullName="Devices.uEye.Helpers.Frame" LastSymbolSource="VL.Devices.uEye.vl">
                       <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                      <Choice Kind="ProcessAppFlag" Name="FrameToImage" />
+                      <Choice Kind="ProcessAppFlag" Name="FrameToImageSafe" />
                     </p:NodeReference>
                     <Pin Id="NJtD3zuyeTLPBxvaRpCo5m" Name="Input" Kind="InputPin" />
                     <Pin Id="GOs5OxvXW9TN3O8LiwGJxD" Name="Format" Kind="InputPin" />
@@ -24560,6 +24768,16 @@
                   <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                   <Choice Kind="OperationCallFlag" Name="Stack" />
                   <CategoryReference Kind="Category" Name="NodePath" />
+                  <PinReference Kind="OutputPin" Name="Stack">
+                    <p:DataTypeReference p:Type="TypeReference">
+                      <Choice Kind="TypeFlag" Name="Stack" />
+                      <p:TypeArguments>
+                        <TypeReference>
+                          <Choice Kind="TypeFlag" Name="Integer32 (Unsigned)" />
+                        </TypeReference>
+                      </p:TypeArguments>
+                    </p:DataTypeReference>
+                  </PinReference>
                 </p:NodeReference>
                 <Pin Id="QN0o64OZ0H0O4NkPcXNw5b" Name="Input" Kind="StateInputPin" />
                 <Pin Id="CaOiOGQQKYNMMQqVfLLtbw" Name="Output" Kind="StateOutputPin" />
@@ -24870,19 +25088,6 @@
               </Pad>
               <Pad Id="SqEYL9zQtgLOcUIt0MKx9S" Comment="Has Changed" Bounds="56,632,35,35" ShowValueBox="true" isIOBox="true" />
             </Canvas>
-            <Patch Id="JNNVLQwnOAKMO5VFLRgymb" Name="Create" ParticipatingElements="BMdBW2FRt30N331pZmalhB,RyH3g0Lps2aO8Gsp7vnZiY">
-              <Pin Id="PmlixGCO0Z1LEOwP8kA9yU" Name="Node Context" Kind="InputPin" Visibility="Hidden" />
-            </Patch>
-            <Patch Id="Ij4SnVL1R5UP5rAPwDwSGA" Name="Update">
-              <Pin Id="T8T9bk7h7ECNRSF0kEwXty" Name="keep Inspector Open" Kind="InputPin" Bounds="2732,1042" />
-              <Pin Id="AWvJh5JgDx1QctVIVZUrCe" Name="Cam ID" Kind="InputPin" />
-              <Pin Id="Hu2qYf8N4H4O0FigWTbzAe" Name="Number Of Sequence Buffers" Kind="InputPin" Bounds="529,570" DefaultValue="3" Visibility="Optional">
-                <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
-                  <Choice Kind="TypeFlag" Name="Integer32" />
-                </p:TypeAnnotation>
-              </Pin>
-              <Pin Id="J7v0pF2IfIVMbUUKjWeZ5F" Name="Force Init" Kind="InputPin" Bounds="60,323" Visibility="Optional" />
-            </Patch>
             <Slot Id="KQTQ7n0FiLZN1u4vWetMCi" Name="Camera" />
             <Slot Id="AJIEmi1bzLfLtE6GuWa8CS" Name="NumSeqBuffers" />
             <Slot Id="Lur4tvoEoDoOnYcVWos8bC" Name="Mem Ids" />
@@ -24890,7 +25095,6 @@
             <Link Id="AMQRWnPgkfnPO4l3zBEl1u" Ids="IbTf29QAaGMNY6ctpiNvXK,BCHT46Fzkf9QabCTaPYDZN" />
             <Link Id="IaZLjcz8LhJMZcXOlt5XPW" Ids="ULHVrgad0B6QCmltnNs3YS,F0BPb2e5HOpMbNCSDfdw3P" />
             <Link Id="DVG8lsRmZuYQc8W0ZpaHgv" Ids="Hv9zqejfOChLFW4lTca6hx,F9uX57BdwUrPKczYAX1EUR" />
-            <Patch Id="FV36J6x0D0xNUYSaAyestm" Name="Dispose" ParticipatingElements="AMQRWnPgkfnPO4l3zBEl1u" />
             <Link Id="Ux795VWWngePy7chnUfXky" Ids="P6CpVp3URfKNDdQUXQBXKk,BpWewF8RfAvN4r4jSqNg3f" IsHidden="true" />
             <Link Id="Q3vQtOSSgwRMoL2LfGxiv8" Ids="PW8HlRJRxHoMw0xEtkZPeI,PbVzilqbSP2MZZ92oYCZmW" />
             <Link Id="GRBpgOQKzEQMI5o7Vmx4Vy" Ids="AC6wdFdnLkkOlPZWUWDUCs,CGE9M82mST7OUnfEoMyzkA" />
@@ -24917,7 +25121,6 @@
             <Link Id="LUiW0c6BdkHMz7y1mGWkFY" Ids="E0jQPEFEai6NvZXymDo7l1,UV0mCRhbaVyPRxxnXUnhSt" IsFeedback="true" />
             <Link Id="BSH9enQNTVzMemUCEpjiKV" Ids="NuQKiVX8YGENc2WOELKfPK,UV0mCRhbaVyPRxxnXUnhSt" />
             <Link Id="PFnn4fRxj8OMJzmcHbmgby" Ids="UV0mCRhbaVyPRxxnXUnhSt,GqXvkm0MfNLLa3nAkB7vOn" />
-            <Patch Id="QXeYalfuxVJOQ1PtxIg6Og" Name="Inspector" ParticipatingElements="QGHWurCPuPmMVcFOMbvYrb" />
             <Slot Id="VAjqM48mt1xOZcAC2e0NN8" Name="Node is Selected" />
             <Link Id="MVYGQ0Ztys3NnmNFh9dmLH" Ids="Qhb4nthwIi4MKEZ1FrlGtk,ILSbWVriQAOPZo7UehdZ4g" />
             <Link Id="S0E47R299RbN4wgl0SPAPg" Ids="Dwgi5aNiQiTLxe9virruZO,I4ZM1yxQdyiOvHneV1pfrH" />
@@ -24928,9 +25131,6 @@
             <Link Id="QGHWurCPuPmMVcFOMbvYrb" Ids="I4ZM1yxQdyiOvHneV1pfrH,Qi9na3IIMLKPdlIJN0PcMr" />
             <Link Id="K9IxaroRLrTO2fkwy2u4Cp" Ids="J339x6AR5J4LoVBC1z4dDI,UXC35w6yhpALfztSe5W8yz" />
             <Link Id="OTRKySfMTE1NRg41Cj0jVP" Ids="BpWewF8RfAvN4r4jSqNg3f,PW8HlRJRxHoMw0xEtkZPeI" />
-            <Patch Id="OUy0HV0RJV7NnEJgkI7b61" Name="GetImage">
-              <Pin Id="Tkb0qtwCDahLInkTruyVZh" Name="Image Out" Kind="OutputPin" />
-            </Patch>
             <Link Id="RyH3g0Lps2aO8Gsp7vnZiY" Ids="Ul4tJgOthSrPAikHKBedoJ,Gn4xB6gF0yJPQU43gXN8Dg" />
             <Link Id="RvB5uUguDArQA33mj1P7EF" Ids="AWvJh5JgDx1QctVIVZUrCe,M4ZJWsvsEE1Mbj1P8co5gE" IsHidden="true" />
             <Link Id="VW0n0JWXGdiNkNZxxcLwTj" Ids="EqL23Vb2FASOrEPI7crwZS,NSCQ4W7N1kyQYRBJhEju8E" />
@@ -24951,18 +25151,6 @@
             <Slot Id="OGoLimJLjVnPohrCLHztOr" Name="Is Opened" />
             <Link Id="SqY1eQu5ZseOsVN7xULfXd" Ids="B1LOID0DjDyPuXx2OlZoS5,JXWLnisDNahPISDl1s10iG" />
             <Link Id="KPpnQ84C9DxObSHsZ9Mblo" Ids="JXWLnisDNahPISDl1s10iG,ARF93OFiRFHLIGZD9SPHct" />
-            <Patch Id="A5ABQMcJyQtOt5yNOWz4IP" Name="ApplyFeatures">
-              <Pin Id="P6CpVp3URfKNDdQUXQBXKk" Name="Feature" Kind="InputPin" IsPinGroup="true">
-                <p:TypeAnnotation>
-                  <Choice Kind="TypeFlag" Name="Spread" />
-                  <p:TypeArguments>
-                    <TypeReference>
-                      <Choice Kind="TypeFlag" Name="IuEyeFeature" />
-                    </TypeReference>
-                  </p:TypeArguments>
-                </p:TypeAnnotation>
-              </Pin>
-            </Patch>
             <Link Id="GrXkLEx9oBIOT3b4DnDwbX" Ids="TjsuFAfAIg6K9vUmP2iY9P,QlINGbvp0uRLDIrysXnlKc" />
             <Link Id="G3w0hPoFKadPjcFyfxWtZy" Ids="FMcD5XJwpXeMNtX0hVmPUn,S7bxddVGn7bPyBeyNVhz9W" />
             <Link Id="O7NtW4XAimjPbyFbc59xs8" Ids="T2C8P0CKWLxMBu2dAJCJsn,N4dz3NNCQK6Pb4mTdqIH4Y" />
@@ -24986,10 +25174,6 @@
             <Link Id="MToXDGCAduVNTFI3RXBgKf" Ids="HGtvnPpNJCgLE5QE1V41M5,A0QoClSCrbeOOYdRkJCftu" />
             <Link Id="FVF3njofxErLj6OvRtmWPK" Ids="A0QoClSCrbeOOYdRkJCftu,NH1YI4rL4AUP5qFVfdVdTl" />
             <Link Id="Ef5n88AD0nWNFWpYNgmcFP" Ids="CqJmU3xy7sNNiuD9lkBcGP,MgxyUj5xfp7PfC9fn3K4PI" />
-            <Patch Id="VzjsaXxF5gWPYkquvUSn4c" Name="Status">
-              <Pin Id="VX1gds9QTYZN727hV8Gg0G" Name="Is Opened" Kind="OutputPin" />
-              <Pin Id="G04ZLNEOh7JO9tESnSi96I" Name="is initialized" Kind="OutputPin" Visibility="Optional" />
-            </Patch>
             <Link Id="BGQiSC85QX2NEbeOJpR2tB" Ids="CJEjPxcUyRoOy5UG9uC1K2,DhboQRpxVdBQVUOOkxHQ10" />
             <Link Id="SCKFqEOeM4XMjO6obTE9I3" Ids="I4ZM1yxQdyiOvHneV1pfrH,G1kmMccz1gOLoCIZhQlirl" />
             <Link Id="Q8ojBIxvwyRLA3p7mWyFEG" Ids="TRHPXBAdbr4PV2FQG0WnYj,U4VbBGNazSbN2Ga5LULvT8" />
@@ -25009,6 +25193,40 @@
             <Link Id="ESMToPiGMnUNYxKYYt3cgD" Ids="T37B6gdWffmLgHNupqUahW,UtRhgk2JKEOLfIk7IJvxfP" />
             <Link Id="TFDXDBCGdTqMbM19SmvBxY" Ids="SOGHYn45xdtLCMALlXowK0,QOBaq3LULq9Nhbvzxv2jwH" />
             <Link Id="LCvqR4JdZIPQQeFPJ0ODaE" Ids="M4ZJWsvsEE1Mbj1P8co5gE,JmGNR25WTIrLTq5Vyyv4YB" />
+            <Patch Id="JNNVLQwnOAKMO5VFLRgymb" Name="Create" ParticipatingElements="RyH3g0Lps2aO8Gsp7vnZiY,BMdBW2FRt30N331pZmalhB">
+              <Pin Id="PmlixGCO0Z1LEOwP8kA9yU" Name="Node Context" Kind="InputPin" Visibility="Hidden" />
+            </Patch>
+            <Patch Id="Ij4SnVL1R5UP5rAPwDwSGA" Name="Update">
+              <Pin Id="J7v0pF2IfIVMbUUKjWeZ5F" Name="Force Init" Kind="InputPin" Bounds="60,323" Visibility="Optional" />
+              <Pin Id="AWvJh5JgDx1QctVIVZUrCe" Name="Cam ID" Kind="InputPin" />
+              <Pin Id="Hu2qYf8N4H4O0FigWTbzAe" Name="Number Of Sequence Buffers" Kind="InputPin" Bounds="529,570" DefaultValue="3" Visibility="Optional">
+                <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+                  <Choice Kind="TypeFlag" Name="Integer32" />
+                </p:TypeAnnotation>
+              </Pin>
+              <Pin Id="T8T9bk7h7ECNRSF0kEwXty" Name="keep Inspector Open" Kind="InputPin" Bounds="2732,1042" />
+            </Patch>
+            <Patch Id="FV36J6x0D0xNUYSaAyestm" Name="Dispose" ParticipatingElements="AMQRWnPgkfnPO4l3zBEl1u" />
+            <Patch Id="QXeYalfuxVJOQ1PtxIg6Og" Name="Inspector" ParticipatingElements="QGHWurCPuPmMVcFOMbvYrb" />
+            <Patch Id="OUy0HV0RJV7NnEJgkI7b61" Name="GetImage">
+              <Pin Id="Tkb0qtwCDahLInkTruyVZh" Name="Image Out" Kind="OutputPin" />
+            </Patch>
+            <Patch Id="A5ABQMcJyQtOt5yNOWz4IP" Name="ApplyFeatures">
+              <Pin Id="P6CpVp3URfKNDdQUXQBXKk" Name="Feature" Kind="InputPin" IsPinGroup="true">
+                <p:TypeAnnotation>
+                  <Choice Kind="TypeFlag" Name="Spread" />
+                  <p:TypeArguments>
+                    <TypeReference>
+                      <Choice Kind="TypeFlag" Name="IuEyeFeature" />
+                    </TypeReference>
+                  </p:TypeArguments>
+                </p:TypeAnnotation>
+              </Pin>
+            </Patch>
+            <Patch Id="VzjsaXxF5gWPYkquvUSn4c" Name="Status">
+              <Pin Id="VX1gds9QTYZN727hV8Gg0G" Name="Is Opened" Kind="OutputPin" />
+              <Pin Id="G04ZLNEOh7JO9tESnSi96I" Name="is initialized" Kind="OutputPin" Visibility="Optional" />
+            </Patch>
           </Patch>
         </Node>
         <!--
@@ -25273,6 +25491,16 @@
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                 <Choice Kind="OperationCallFlag" Name="Stack" />
                 <CategoryReference Kind="Category" Name="NodePath" />
+                <PinReference Kind="OutputPin" Name="Stack">
+                  <p:DataTypeReference p:Type="TypeReference">
+                    <Choice Kind="TypeFlag" Name="Stack" />
+                    <p:TypeArguments>
+                      <TypeReference>
+                        <Choice Kind="TypeFlag" Name="Integer32 (Unsigned)" />
+                      </TypeReference>
+                    </p:TypeArguments>
+                  </p:DataTypeReference>
+                </PinReference>
               </p:NodeReference>
               <Pin Id="EV9NhQL8zciNGcjzvyyooz" Name="Input" Kind="StateInputPin" />
               <Pin Id="BymtQd9GXByLeSIlKfOiyc" Name="Output" Kind="StateOutputPin" />
@@ -25416,11 +25644,6 @@
                     </p:TypeAnnotation>
                   </Pad>
                 </Canvas>
-                <Patch Id="RMu1lXhDpTrMXVsROfxUvv" Name="Create" />
-                <Patch Id="Sw0A2V1HigEPdaziGGA3A2" Name="Update">
-                  <Pin Id="ILr7LEhhFF3QGk7HtswNFI" Name="Visible" Kind="InputPin" Bounds="592,444" />
-                  <Pin Id="MZMMho8mAGDLNQ5iC7Kg2Y" Name="Form" Kind="InputPin" Bounds="506,440" />
-                </Patch>
                 <ProcessDefinition Id="EKTYt79N6IhO2lnkDULEyM">
                   <Fragment Id="UJberhVlPZ0MPpvK0Py3AJ" Patch="RMu1lXhDpTrMXVsROfxUvv" Enabled="true" />
                   <Fragment Id="BF74A0vbKrZLpdLEJNQCJK" Patch="Sw0A2V1HigEPdaziGGA3A2" Enabled="true" />
@@ -25441,16 +25664,14 @@
                 <Link Id="HlDXEhb0gFfLse7yJ0Y9PO" Ids="F7ON6PKu2dhNJeCu0PnCiP,VJioCgg2RZgNx2Gy0vekGf" />
                 <Link Id="HucTRrX0zJiPgk41njXxwz" Ids="GsryJ94Igo7QQznZVEorNS,DebTwFQmfMsObzQ6oz2QXU" />
                 <Link Id="SKnjCRDIlglNVAsd4Q10pj" Ids="PJUWqmbXNBZNYI7JF7AM6u,DBGdAeVg2mlLmsPoqzTAbO" />
+                <Patch Id="RMu1lXhDpTrMXVsROfxUvv" Name="Create" />
+                <Patch Id="Sw0A2V1HigEPdaziGGA3A2" Name="Update">
+                  <Pin Id="MZMMho8mAGDLNQ5iC7Kg2Y" Name="Form" Kind="InputPin" Bounds="506,440" />
+                  <Pin Id="ILr7LEhhFF3QGk7HtswNFI" Name="Visible" Kind="InputPin" Bounds="592,444" />
+                </Patch>
               </Patch>
             </Node>
           </Canvas>
-          <Patch Id="UdTFV8ZpOa1NFmA66POXVc" Name="Create">
-            <Pin Id="G3Knn7lIrK8M1CeormMvFP" Name="Node Context" Kind="InputPin" Visibility="Hidden" />
-          </Patch>
-          <Patch Id="OBFZ7RbZ5WEQQYUjJRJIt0" Name="Update">
-            <Pin Id="V0IcQyvT86sPd7MGOTLIcM" Name="keep Inspector Open" Kind="InputPin" Bounds="2732,1042" />
-            <Pin Id="DJna4hT5crjLHpzRgiPOg5" Name="uEye Camera" Kind="InputPin" Bounds="520,58" />
-          </Patch>
           <ProcessDefinition Id="IMVEwPomSfVPw1pWcLAQcI">
             <Fragment Id="FTQSmsmNfLlLrM4kEwHdj1" Patch="UdTFV8ZpOa1NFmA66POXVc" Enabled="true" />
             <Fragment Id="KKL8P5BPMovNqSmob576Na" Patch="OBFZ7RbZ5WEQQYUjJRJIt0" Enabled="true" />
@@ -25496,6 +25717,13 @@
           <Link Id="DsDdO7B48zIQJC7OUwaaYJ" Ids="DUIAq2eIky7MywY10Iwb4L,EFQJQOLfCb3P0kRg7GjSG3" />
           <Link Id="U9D5XY9LyTnLlGNdk0h2pR" Ids="RZcmoVDRXUPPNLLhZMNMCa,Uimp2lPuGmcP2QJ4MberuT" />
           <Link Id="TEb8svNJEvmMxN6HkynxHI" Ids="RZcmoVDRXUPPNLLhZMNMCa,LKVpkUvYafnLkruEYRob5x" />
+          <Patch Id="UdTFV8ZpOa1NFmA66POXVc" Name="Create">
+            <Pin Id="G3Knn7lIrK8M1CeormMvFP" Name="Node Context" Kind="InputPin" Visibility="Hidden" />
+          </Patch>
+          <Patch Id="OBFZ7RbZ5WEQQYUjJRJIt0" Name="Update">
+            <Pin Id="DJna4hT5crjLHpzRgiPOg5" Name="uEye Camera" Kind="InputPin" Bounds="520,58" />
+            <Pin Id="V0IcQyvT86sPd7MGOTLIcM" Name="keep Inspector Open" Kind="InputPin" Bounds="2732,1042" />
+          </Patch>
         </Patch>
       </Node>
       <!--
@@ -25603,6 +25831,16 @@
                 <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
                 <Choice Kind="OperationCallFlag" Name="Stack" />
                 <CategoryReference Kind="Category" Name="NodePath" />
+                <PinReference Kind="OutputPin" Name="Stack">
+                  <p:DataTypeReference p:Type="TypeReference">
+                    <Choice Kind="TypeFlag" Name="Stack" />
+                    <p:TypeArguments>
+                      <TypeReference>
+                        <Choice Kind="TypeFlag" Name="Integer32 (Unsigned)" />
+                      </TypeReference>
+                    </p:TypeArguments>
+                  </p:DataTypeReference>
+                </PinReference>
               </p:NodeReference>
               <Pin Id="LMrTKJzPKvnLCgKSHQoBIL" Name="Input" Kind="StateInputPin" />
               <Pin Id="QqNwCg6AuekNTR8wSrQSaL" Name="Output" Kind="StateOutputPin" />
@@ -25827,19 +26065,6 @@
               </p:TypeAnnotation>
             </Pad>
           </Canvas>
-          <Patch Id="VCfAp0K6TOBPg3bAOfnBAp" Name="Create" ParticipatingElements="D8uQ5ZKkcqSQAomVt67xrT">
-            <Pin Id="EzgWKIq7B93LEUv4MT2I66" Name="Node Context" Kind="InputPin" Visibility="Hidden" />
-          </Patch>
-          <Patch Id="R7lCJsbfcmrNxB3xXGh8VJ" Name="Update">
-            <Pin Id="TDcnreY1ActPd6g5ppvNI2" Name="Cam ID" Kind="InputPin" Summary="look into ids camera manager. 0 takes the first device" />
-            <Pin Id="OXmd8Loah9xM0A14XVipl1" Name="Number Of Sequence Buffers" Kind="InputPin" Bounds="529,570" DefaultValue="3" Visibility="Optional" Summary="default is 3 which is a good choice in most cases">
-              <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
-                <Choice Kind="TypeFlag" Name="Integer32" />
-              </p:TypeAnnotation>
-            </Pin>
-            <Pin Id="OWKGCo4thAlP6SLbKbboJL" Name="Force Init" Kind="InputPin" Bounds="60,323" Visibility="Optional" Summary="shouldn't be needed" />
-            <Pin Id="VOGMwIWeiy2LexjplCGqkm" Name="initial ColorMode" Kind="InputPin" Visibility="Optional" Summary="ideally set this to the desired colormode, so it never has to change" />
-          </Patch>
           <Slot Id="UcxuKdloKl6LJmQY0Ur5W1" Name="Camera" />
           <Slot Id="Lc3ysHZoeBeMaBRkEs376l" Name="NumSeqBuffers" />
           <Slot Id="FKkOXkWb28cOlKzZjgdHdT" Name="Mem Ids" />
@@ -25847,7 +26072,6 @@
           <Link Id="AYXpiUkTYwYPDncCbm0unN" Ids="UZYDAhIiko0NxARMPSxVY4,Orw2XUZgCB5MClxXYBf6Z1" />
           <Link Id="DzFOo2StxrnMMNT9Mu4skd" Ids="SbsHE1OAe58NxbJKneY247,D8Z4lnh0kYZQTBpAmqJDMg" />
           <Link Id="TmqzkYEbQAbQDBkTU8W51O" Ids="PA6jNyc9qVvOcUtSo29SNx,IgqYpHhNLZHMXpZtqfbYSQ" />
-          <Patch Id="T1Zm2ZDU4WkN9kyo1sbN2x" Name="Dispose" ParticipatingElements="AYXpiUkTYwYPDncCbm0unN,MZwz4fgkPCNNlfMZn0CmvL" />
           <Link Id="Liwm8BTI6fLLMRuMdEdGwA" Ids="Efqp69NlTYdNMrcPHyzqqk,IvpqBiwVEoyMDBFb9x5euP" IsHidden="true" />
           <Link Id="K17Obfo821SOFdCaMrt85V" Ids="OzDIARrEAwxLRwHccsNpR4,JOF18mLtf4zL4vAVkSu60N" />
           <Link Id="CWG4gfYhUaVMlXOiSOMCsS" Ids="KCdWmUJDSjLMzJNYhNJvxN,ERtP04WzKoqLLcRxeTcqLn" />
@@ -25858,9 +26082,6 @@
           <Link Id="Nrxkmt09OLtMCCjxv3NqiR" Ids="Pp4RuLbsjgENMHNZMRnnUA,VEyVtEjgNTHNSiGJGxbkEb" />
           <Link Id="Rk7PdiCNiKdNePNMQBRUQp" Ids="Gm7khdPfutNOFGLUxYXVbP,KmOzIGUfX9XN0wzreyMZOT" />
           <Slot Id="SHrskNi2VyMP3YqbbRO559" Name="this nodeid" />
-          <Patch Id="CDD1TpU0OeMN8cJHtSMQsL" Name="GetImage">
-            <Pin Id="UKC7g2s7ntXL00gSWpe729" Name="Image Out" Kind="OutputPin" />
-          </Patch>
           <Link Id="By8T90yS8nWL5sXo615Ld6" Ids="TDcnreY1ActPd6g5ppvNI2,OUHXcSp2P5kPBCMeHQ2867" IsHidden="true" />
           <Link Id="BypkRZFNY9fOb2m4mgxhU4" Ids="Md8caw8D8h2OYZzEDGdj8h,HPIcNrIYMayLxNIU1dze3K" />
           <Link Id="ToMiMunVkfzO1RnOEZkE8L" Ids="MFLHhN1G4RDNWt7HSrrhH6,Mv11KAChIU1MAKX09WrLoH" IsFeedback="true" />
@@ -25880,18 +26101,6 @@
           <Slot Id="DIeF7eTve0HNtRI0Yv0NGV" Name="Is Opened" />
           <Link Id="P2a2Xu8layrMhAf1aeRzmt" Ids="LB3Sq9XxlMCQXSj27fckzq,U2TIa7KUqjJQMAPdQVVF6F" />
           <Link Id="VPkijvfAmgkMhzoW3AbFxx" Ids="U2TIa7KUqjJQMAPdQVVF6F,CXJsG14qPk8OuDcdzROWdg" />
-          <Patch Id="Tgq4ikTzDCkL1O186blC2a" Name="ApplyFeatures">
-            <Pin Id="Efqp69NlTYdNMrcPHyzqqk" Name="Feature" Kind="InputPin" IsPinGroup="true">
-              <p:TypeAnnotation>
-                <Choice Kind="TypeFlag" Name="Spread" />
-                <p:TypeArguments>
-                  <TypeReference>
-                    <Choice Kind="TypeFlag" Name="IuEyeFeature" />
-                  </TypeReference>
-                </p:TypeArguments>
-              </p:TypeAnnotation>
-            </Pin>
-          </Patch>
           <ProcessDefinition Id="G0H1gx9lyrJOvr4d99RGK9" HasStateOut="true">
             <Fragment Id="Afx9hSySxWgNtqvUBNTEjD" Patch="VCfAp0K6TOBPg3bAOfnBAp" Enabled="true" />
             <Fragment Id="BWSnxXtgNegLzQNYnXJlEl" Patch="R7lCJsbfcmrNxB3xXGh8VJ" Enabled="true" />
@@ -25911,10 +26120,6 @@
           <Link Id="B9qnvbJE7xmLJXevcwY3XI" Ids="TliyVj1k3mgL1VjLVEmSKd,TeyEHtD3LnPQJewhs1aZmQ" />
           <Link Id="Tol5JUzqKxfQdXe4CkoIJf" Ids="TeyEHtD3LnPQJewhs1aZmQ,Ob7qhQGCYRzPrTtgw0hvvZ" />
           <Link Id="LksFhTRD9YqMtp6KbibMUs" Ids="MvCCvwLhYvkP0U9OHSOI7H,VRKT1QkXE9jMwqtS9VuDyd" />
-          <Patch Id="TluSUvYiCsBPpgRyinYbz7" Name="Status">
-            <Pin Id="PmUfQSpbzfHLkWe0mVW5mN" Name="Is Opened" Kind="OutputPin" />
-            <Pin Id="N5qDfsWaRfyMn49V0ddef3" Name="is initialized" Kind="OutputPin" Visibility="Optional" />
-          </Patch>
           <Link Id="ISJBGZTNHGVNFjYuy0yyBZ" Ids="BhTQlpK5m4lMUvJS08lsTt,GX9lNXcu260LYc1AJDFMid" />
           <Link Id="GjZv0nnTJPPOpV74Lv4SKI" Ids="RMiJpcsDYYwNiJwy0kCxrM,N5qDfsWaRfyMn49V0ddef3" IsHidden="true" />
           <Link Id="GrR1hYXfdXFPjENDLQylma" Ids="C7FoprLNiCVLHlHfFtiweC,RMiJpcsDYYwNiJwy0kCxrM" />
@@ -25931,10 +26136,6 @@
           <Slot Id="I4x82HKFz3YOrKZZk9xTJd" Name="Features" />
           <Link Id="FhyEAA5L8ItNPS5kdfGlPn" Ids="J8cgHmCdTLTLnNsXMX8BJM,QkKvmq1IHzILr1hiI1aUt8" />
           <Link Id="TL4MlJDE0VzQHqD2G4Lkgf" Ids="QkKvmq1IHzILr1hiI1aUt8,HWCw0bxHUa2PHrXqPLGa0b" IsHidden="true" />
-          <Patch Id="FVlxEvTRbfNP0rLXSPk8zm" Name="GetFeatures">
-            <Pin Id="HWCw0bxHUa2PHrXqPLGa0b" Name="Features" Kind="OutputPin" Summary="a list of all attached Features" />
-            <Pin Id="Nquw9oTJsvTNhLCr7kNdpk" Name="Node ID" Kind="OutputPin" Summary="The Node Id of this Node (Inspector needs it)" />
-          </Patch>
           <Link Id="FtMXpQ6ATKqLDE73Dp4E7G" Ids="Cxef5mdBblXQJ8zkG96OS6,Nquw9oTJsvTNhLCr7kNdpk" IsHidden="true" />
           <Link Id="PG4NeZ2drZ4PkpSaSsf1WD" Ids="KmOzIGUfX9XN0wzreyMZOT,Cxef5mdBblXQJ8zkG96OS6" />
           <Link Id="AG7zHLggSlwN2iLGSSj9sV" Ids="ISldXWXaiXQLt23IttuSkh,NBUldjQB8YwNMYfQXXvlQe" />
@@ -25950,6 +26151,43 @@
           <Link Id="OKjH19iyN3RQYEv5Byd5eV" Ids="VOGMwIWeiy2LexjplCGqkm,EjGwKD3SWxYPibgPPNOjH2" IsHidden="true" />
           <Link Id="MZwz4fgkPCNNlfMZn0CmvL" Ids="UUyiaYUHk2UO4hSMVovFnE,TgjdRSBtb8qLhgJAXMR1yB" />
           <Link Id="OIAwPSoV5AFPlrvleZDBRa" Ids="UEtA3eCOvL5QQmS8mPiIwE,VNsdKbgTtzyNA2Z3dSnWbr" />
+          <Patch Id="VCfAp0K6TOBPg3bAOfnBAp" Name="Create" ParticipatingElements="D8uQ5ZKkcqSQAomVt67xrT">
+            <Pin Id="EzgWKIq7B93LEUv4MT2I66" Name="Node Context" Kind="InputPin" Visibility="Hidden" />
+          </Patch>
+          <Patch Id="R7lCJsbfcmrNxB3xXGh8VJ" Name="Update">
+            <Pin Id="OWKGCo4thAlP6SLbKbboJL" Name="Force Init" Kind="InputPin" Bounds="60,323" Visibility="Optional" Summary="shouldn't be needed" />
+            <Pin Id="TDcnreY1ActPd6g5ppvNI2" Name="Cam ID" Kind="InputPin" Summary="look into ids camera manager. 0 takes the first device" />
+            <Pin Id="OXmd8Loah9xM0A14XVipl1" Name="Number Of Sequence Buffers" Kind="InputPin" Bounds="529,570" DefaultValue="3" Visibility="Optional" Summary="default is 3 which is a good choice in most cases">
+              <p:TypeAnnotation LastCategoryFullName="Primitive" LastSymbolSource="CoreLibBasics.vl">
+                <Choice Kind="TypeFlag" Name="Integer32" />
+              </p:TypeAnnotation>
+            </Pin>
+            <Pin Id="VOGMwIWeiy2LexjplCGqkm" Name="initial ColorMode" Kind="InputPin" Visibility="Optional" Summary="ideally set this to the desired colormode, so it never has to change" />
+          </Patch>
+          <Patch Id="T1Zm2ZDU4WkN9kyo1sbN2x" Name="Dispose" ParticipatingElements="AYXpiUkTYwYPDncCbm0unN,MZwz4fgkPCNNlfMZn0CmvL" />
+          <Patch Id="CDD1TpU0OeMN8cJHtSMQsL" Name="GetImage">
+            <Pin Id="UKC7g2s7ntXL00gSWpe729" Name="Image Out" Kind="OutputPin" />
+          </Patch>
+          <Patch Id="Tgq4ikTzDCkL1O186blC2a" Name="ApplyFeatures">
+            <Pin Id="Efqp69NlTYdNMrcPHyzqqk" Name="Feature" Kind="InputPin" IsPinGroup="true">
+              <p:TypeAnnotation>
+                <Choice Kind="TypeFlag" Name="Spread" />
+                <p:TypeArguments>
+                  <TypeReference>
+                    <Choice Kind="TypeFlag" Name="IuEyeFeature" />
+                  </TypeReference>
+                </p:TypeArguments>
+              </p:TypeAnnotation>
+            </Pin>
+          </Patch>
+          <Patch Id="TluSUvYiCsBPpgRyinYbz7" Name="Status">
+            <Pin Id="PmUfQSpbzfHLkWe0mVW5mN" Name="Is Opened" Kind="OutputPin" />
+            <Pin Id="N5qDfsWaRfyMn49V0ddef3" Name="is initialized" Kind="OutputPin" Visibility="Optional" />
+          </Patch>
+          <Patch Id="FVlxEvTRbfNP0rLXSPk8zm" Name="GetFeatures">
+            <Pin Id="HWCw0bxHUa2PHrXqPLGa0b" Name="Features" Kind="OutputPin" Summary="a list of all attached Features" />
+            <Pin Id="Nquw9oTJsvTNhLCr7kNdpk" Name="Node ID" Kind="OutputPin" Summary="The Node Id of this Node (Inspector needs it)" />
+          </Patch>
         </Patch>
       </Node>
       <!--
@@ -26082,16 +26320,6 @@
               <Pin Id="TRfzPe2kRysQNuAKWsLWvP" Name="Output" Kind="OutputPin" />
             </Node>
           </Canvas>
-          <Patch Id="IoiLL9TVI9yQF4nkL6dpBB" Name="Create" />
-          <Patch Id="CRtgzQmapFbM6xfkRZrmz7" Name="Update">
-            <Pin Id="DEf5HX9yXeKMXrH1kU7nA6" Name="Camera ID" Kind="OutputPin" Bounds="466,712" />
-            <Pin Id="MKMfQlDlFBUOq36QrI2U1e" Name="Device ID" Kind="OutputPin" Bounds="551,713" />
-            <Pin Id="H33GEMCYU6EMoa4h5mmAYs" Name="Model" Kind="OutputPin" Bounds="642,712" />
-            <Pin Id="RkFiZxWXJ7XPM7o49OnXJ4" Name="Serial Number" Kind="OutputPin" Bounds="728,716" />
-            <Pin Id="EJpdSF4oVV3L61hF0PEq9g" Name="Status" Kind="OutputPin" Bounds="845,717" />
-            <Pin Id="G5boPOdqUOON4fnvOrNGGO" Name="Result" Kind="OutputPin" Bounds="342,768" />
-            <Pin Id="DvMND9pzGjdPLuEPhWDZ1u" Name="Refresh" Kind="InputPin" Bounds="315,197" />
-          </Patch>
           <ProcessDefinition Id="RpIRXUrwSlVLGHZFVbERDF">
             <Fragment Id="GRY7fXTyHp6N6pz58HH8uH" Patch="IoiLL9TVI9yQF4nkL6dpBB" Enabled="true" />
             <Fragment Id="OTFwYOA3n2VMWNOd1BmIyd" Patch="CRtgzQmapFbM6xfkRZrmz7" Enabled="true" />
@@ -26125,6 +26353,16 @@
           <Link Id="Hug52kxuEpoNO8ODfxaRnm" Ids="DvMND9pzGjdPLuEPhWDZ1u,GrzN6O7XGYiQPHCh6AC8TJ" IsHidden="true" />
           <Link Id="DXHz7qTXnAsOjl5LnbbH2x" Ids="Iri6HPHqOQvNANksVQ5x7D,RuzSNj6Zj1sLz3PtnUSZCR" />
           <Link Id="BHEEcpwFEKPOvZDKEdSXyp" Ids="TRfzPe2kRysQNuAKWsLWvP,BIFpewAQFboMA84lrADrCn" />
+          <Patch Id="IoiLL9TVI9yQF4nkL6dpBB" Name="Create" />
+          <Patch Id="CRtgzQmapFbM6xfkRZrmz7" Name="Update">
+            <Pin Id="DvMND9pzGjdPLuEPhWDZ1u" Name="Refresh" Kind="InputPin" Bounds="315,197" />
+            <Pin Id="G5boPOdqUOON4fnvOrNGGO" Name="Result" Kind="OutputPin" Bounds="342,768" />
+            <Pin Id="DEf5HX9yXeKMXrH1kU7nA6" Name="Camera ID" Kind="OutputPin" Bounds="466,712" />
+            <Pin Id="MKMfQlDlFBUOq36QrI2U1e" Name="Device ID" Kind="OutputPin" Bounds="551,713" />
+            <Pin Id="H33GEMCYU6EMoa4h5mmAYs" Name="Model" Kind="OutputPin" Bounds="642,712" />
+            <Pin Id="RkFiZxWXJ7XPM7o49OnXJ4" Name="Serial Number" Kind="OutputPin" Bounds="728,716" />
+            <Pin Id="EJpdSF4oVV3L61hF0PEq9g" Name="Status" Kind="OutputPin" Bounds="845,717" />
+          </Patch>
         </Patch>
       </Node>
     </Canvas>
@@ -26150,10 +26388,10 @@
     </Node>
   </Patch>
   <PlatformDependency Id="SpobgrSu779NjskXXxvubO" Location="System.Drawing" />
-  <NugetDependency Id="D1T4Spfyg98PB385eJg15W" Location="VL.CoreLib" Version="2021.3.3" />
+  <NugetDependency Id="D1T4Spfyg98PB385eJg15W" Location="VL.CoreLib" Version="2021.4.10" />
   <PlatformDependency Id="UtCDJ251QpuPmDS2qhtzTU" Location="./lib/net462/uEyeDotNet.dll" />
-  <NugetDependency Id="Via7kAfJkrfPcopc57zW1n" Location="VL.Lang" Version="2021.3.3" />
-  <NugetDependency Id="IC5GVagMG4AQBHc6GVNhq3" Location="VL.Skia" Version="2021.3.3" />
+  <NugetDependency Id="Via7kAfJkrfPcopc57zW1n" Location="VL.Lang" Version="2021.4.10" />
+  <NugetDependency Id="IC5GVagMG4AQBHc6GVNhq3" Location="VL.Skia" Version="2021.4.10" />
   <PlatformDependency Id="U6NY53eTauUPfxJdRwD1M0" Location="System.Windows.Forms" />
   <PlatformDependency Id="J9XmfmDD72vPyFd96edhTR" Location="mscorlib" />
   <PlatformDependency Id="IJHnB3vcfovPocNLhvIxNG" Location="./lib/netstandard2.0/uEyeExtensions.dll" />
