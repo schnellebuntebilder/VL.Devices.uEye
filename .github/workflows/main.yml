@@ -17,7 +17,7 @@ jobs:
     - name: Git Checkout
       uses: actions/checkout@master
 
-    - name: Add msbuild to PATH
+    - name: Setup MSBuild.exe
       uses: microsoft/setup-msbuild@v1.0.2
 
     - name: Setup .NET Core SDK
@@ -26,19 +26,18 @@ jobs:
     - name: Build
       run: msbuild src\uEyeExtensions\uEyeExtensions.sln /t:Build /v:m /m /restore /p:Configuration=Release 
 
-    - name: Download Icon
-      uses: carlosperate/download-file-action@v1.0.3
-      with:
-        file-url: 'https://raw.githubusercontent.com/vvvv/PublicContent/master/nugeticon.png'
-        location: './deployment'
-
     - name: Setup Nuget.exe
       uses: nuget/setup-nuget@v1
 
-    - name: Nuget Pack
-      run: nuget pack ./deployment/VL.Devices.uEye.nuspec -Version ${{env.VERSION}}
-      env:
-        VERSION: 0.3.${{ github.event.inputs.buildnumber }}
-      
-    - name: Nuget Push
-      run: nuget push *.nupkg ${{secrets.NUGET_API}} -src https://api.nuget.org/v3/index.json -NoSymbols
+    - name: Publish VL Nuget
+      uses: vvvv/PublishVLNuget@1.0.42
+      with:
+        csproj: src\uEyeExtensions\uEyeExtensions.csproj
+        nuspec: deployment\VL.Devices.uEye.nuspec
+
+        # Fill the Icon file
+        icon-src: https://raw.githubusercontent.com/vvvv/PublicContent/master/nugeticon.png
+        icon-dst: ./deployment/nugeticon.png
+        
+        # Provide the nuget key. See: https://thegraybook.vvvv.org/reference/extending/publishing.html#getting-a-nugetorg-api-key
+        nuget-key: ${{ secrets.NUGET_API }}
