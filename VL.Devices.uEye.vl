@@ -6175,7 +6175,6 @@
                 <ControlPoint Id="PeHV2G4wCczQdFgucKTNnT" Bounds="678,1908" Alignment="Bottom" />
                 <ControlPoint Id="Cmwy5B9roMlP6zNB68a7Zz" Bounds="293,1908" Alignment="Bottom" />
                 <ControlPoint Id="PKHMlO2pHfZLiOLY8DaOUh" Bounds="595,924" Alignment="Top" />
-                <ControlPoint Id="TmgsW81nZocQZjqpckwYJr" Bounds="644,924" Alignment="Top" />
                 <ControlPoint Id="PxXBZLxP57gNfZPmJ3QERo" Bounds="579,1908" Alignment="Bottom" />
                 <ControlPoint Id="MiRESRLebsNLZRI9SsypxV" Bounds="619,1908" Alignment="Bottom" />
                 <Patch Id="FuMiZvA128yMw7yv0ecehD" ManuallySortedPins="true">
@@ -6278,16 +6277,6 @@
                     <Pin Id="G1fH3n31PMAMLAiuaHsttb" Name="Input 4" Kind="InputPin" />
                   </Node>
                   <ControlPoint Id="JZLD2tGwNkjOFFdFVNEEmx" Bounds="297,1037" />
-                  <Node Bounds="592,1008,54,19" Id="O0pXjoxK9JkOZ2jKGNbfQd">
-                    <p:NodeReference LastCategoryFullName="uEye.Defines.SubsamplingMode" LastDependency="uEyeDotNet.dll">
-                      <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
-                      <Choice Kind="OperationCallFlag" Name="|" />
-                      <CategoryReference Kind="AssemblyCategory" Name="SubsamplingMode" NeedsToBeDirectParent="true" />
-                    </p:NodeReference>
-                    <Pin Id="R8FpF5vDkFEPtGGU1IwklV" Name="Input" Kind="InputPin" />
-                    <Pin Id="G1rcdZxbvqBMQNmJ47sJj5" Name="Input 2" Kind="InputPin" />
-                    <Pin Id="FFQuQmTJA2IM4QtEikoahS" Name="Output" Kind="OutputPin" />
-                  </Node>
                   <Node Bounds="407,1071,25,19" Id="H6i37TIBEkvQGvByZB8sxb">
                     <p:NodeReference LastCategoryFullName="uEye.Defines.SubsamplingMode" LastDependency="uEyeDotNet.dll">
                       <Choice Kind="NodeFlag" Name="Node" Fixed="true" />
@@ -6331,7 +6320,6 @@
               <Pad Id="H3Zif1l0UVKOSEfCyEoEvw" SlotId="I6ES6domiKdN65fNJrGaLy" Bounds="422,1970" />
               <ControlPoint Id="VacFbtI4LHHPVTf7lHZfQ2" Bounds="352,881" />
               <Pad Id="SzB2Fh1MK6ENA81oG1w0Pq" SlotId="POymWjYsrBZL4vjQt67Cef" Bounds="613,841" />
-              <Pad Id="JGmrOL0dpfjOUrWsBemIF2" SlotId="AlLQPw1kFNbOm2usi8gTVx" Bounds="710,845" />
               <!--
 
     ************************ getSupportedSubsampling ************************
@@ -6401,10 +6389,12 @@
               </Node>
               <Pad Id="SYT96Fx63DMLpOmjpJsxKN" SlotId="Uu7zwscJt2BQdm6DjHEHaJ" Bounds="464,698" />
               <ControlPoint Id="FwJGVHz9g2NNKzrzEji55H" Bounds="612,684" />
+              <ControlPoint Id="CPbhcn4Kt0xQAJ14kyERwC" Bounds="614,807" />
             </Canvas>
             <Patch Id="MTBsrPAgd9pNGtKqWfhRC3" Name="Create" />
             <Patch Id="DAKIQaMcSvAPz6BmaVDYWj" Name="Update">
               <Pin Id="QZJZE8c7OJBO7Kb1lvlHpr" Name="supported Modes" Kind="OutputPin" Bounds="522,825" />
+              <Pin Id="QmDZKfa5Ih4OV3cuGIErPI" Name="target Subsampling" Kind="InputPin" />
             </Patch>
             <ProcessDefinition Id="JszfoAOb2xGOHxeSvJhfCI" HasStateOut="true">
               <Fragment Id="JvPWZP2xaK0Odm6V2UusNt" Patch="MTBsrPAgd9pNGtKqWfhRC3" Enabled="true" />
@@ -6435,17 +6425,12 @@
             <Link Id="TshwodHvXrlMSGhi9y8I8Z" Ids="Ugk427mztPQL9BIJI9gAG5,PxvmMk6EujcMYtqGzr8c3a" />
             <Link Id="GLKf4C3J6QROkY7X0BN2JI" Ids="PdLffibYGmJPVTBZ4tvRJN,UsxtPvhKXwmL0BU4f5ZSN5" />
             <Link Id="MShVQuQh4TZQWMMcsNZ8TY" Ids="F56WTzZAv8XQdQz5gNUpn5,JZLD2tGwNkjOFFdFVNEEmx,Cmwy5B9roMlP6zNB68a7Zz" />
-            <Link Id="UiQN5dtu5MAQccNdDPeRpO" Ids="PKHMlO2pHfZLiOLY8DaOUh,R8FpF5vDkFEPtGGU1IwklV" />
-            <Link Id="Bb0Z1S7ynthOwO5e5N5mw5" Ids="TmgsW81nZocQZjqpckwYJr,G1rcdZxbvqBMQNmJ47sJj5" />
-            <Link Id="Rgolz5YUzrPLCalISdwKtu" Ids="FFQuQmTJA2IM4QtEikoahS,QCUcySrkQyhOhADLAXCIVV" />
             <Link Id="A1DFGvpMLHcOKW1c6kIIYi" Ids="F56WTzZAv8XQdQz5gNUpn5,IyifJUZyZPION75v1pAQo7" />
             <Link Id="KUvEuheINx8Lw3bzyOSJ1J" Ids="OavvzMkaeTHMNl5QyeoULH,JpgoKxeCODoQIv5AVqW9UU" />
-            <Link Id="JCOf373az1rNk7K5x9wDsB" Ids="FFQuQmTJA2IM4QtEikoahS,OUluTZAS7RoLIrFuIkf3Gp" />
             <Link Id="SQhMEZducCiMI3EEJvA8NN" Ids="KWpUzSY99ZqLp6Q7B45bCf,QhotMXzA9awMdHXY9kNvo3" />
             <Link Id="Fo7B428KwFfMBIPfaDbECb" Ids="KWpUzSY99ZqLp6Q7B45bCf,VX4vrDxMiA0NxeRuj5NIUX,QEWHl1yvngcMJzUOYhUKxe,INBNs8HeYefP36IB7nouja" />
             <Link Id="LjVnBA9xUcvMxHw1qgggxI" Ids="KWpUzSY99ZqLp6Q7B45bCf,J7sLFDbtttAPwuOWkVtCYr,PeHV2G4wCczQdFgucKTNnT" />
             <Link Id="Ix9tUsriR3UMdRGplhGvXd" Ids="B6nA4zbV5PYOjCH13S2ep5,KWpUzSY99ZqLp6Q7B45bCf" />
-            <Link Id="URBw4wWxbIaO9YCZ1eg1ZU" Ids="FFQuQmTJA2IM4QtEikoahS,Mkcuboo7yAdNgOyhEj0CE1" />
             <Link Id="HV4N3cmwFvuLQZfg9txaGz" Ids="MobILyeJFZQO0ZkNfMxldF,Hs28Ji37hVcNZVafMojfpn" />
             <Link Id="VyZwYRMnWnaPYyO7myBTJw" Ids="QLLHuSbY24vPBBto9yXgBw,JjHauDBfLgjLPmvlhePlEs,VI5POVYiNqULaNAzyjJQfk" />
             <Link Id="Kk2TxkJ5j8lL8oKNRwckE1" Ids="Rw2kGDAkCqVNowYdj2m4fB,EKrBSGGAOWjMn0MjVxh4yV" />
@@ -6467,12 +6452,7 @@
             <Link Id="AqhvM47f5qALRZva12aYoV" Ids="UsxtPvhKXwmL0BU4f5ZSN5,H3Zif1l0UVKOSEfCyEoEvw" />
             <Link Id="KNhXGt2X7upPSCYQoGELkx" Ids="E62IfeIqBQ3P3dTIcGM0tu,VacFbtI4LHHPVTf7lHZfQ2" IsHidden="true" />
             <Link Id="UEWfmSBhWyPLnr22xLEpkG" Ids="VacFbtI4LHHPVTf7lHZfQ2,FA7v0d7cmtZPLrCmHk7CZz" />
-            <Slot Id="POymWjYsrBZL4vjQt67Cef" Name="target 1">
-              <p:TypeAnnotation p:Type="TypeReference">
-                <Choice Kind="TypeFlag" Name="SubsamplingMode" />
-              </p:TypeAnnotation>
-            </Slot>
-            <Slot Id="AlLQPw1kFNbOm2usi8gTVx" Name="target 2">
+            <Slot Id="POymWjYsrBZL4vjQt67Cef" Name="target">
               <p:TypeAnnotation p:Type="TypeReference">
                 <Choice Kind="TypeFlag" Name="SubsamplingMode" />
               </p:TypeAnnotation>
@@ -6489,7 +6469,11 @@
             <Link Id="LrB2jEUcK3vOPXLlVDsre8" Ids="Rw2kGDAkCqVNowYdj2m4fB,MkZ5X7Fp038NnMgB79yPxc" />
             <Link Id="UT4OmMI5HvWMkTZiautOTK" Ids="UtqfLTp2KFjNEPHVOgvuYl,PjnzItJeeiMO0A9IvZ5NTz" />
             <Link Id="PqSRdcFr4VVMZ86M5NYXqR" Ids="SzB2Fh1MK6ENA81oG1w0Pq,PKHMlO2pHfZLiOLY8DaOUh" />
-            <Link Id="SgbOszQdjhMQG49TEYbH6j" Ids="JGmrOL0dpfjOUrWsBemIF2,TmgsW81nZocQZjqpckwYJr" />
+            <Link Id="KRVhHqz3sI1QKprUihzpij" Ids="CPbhcn4Kt0xQAJ14kyERwC,SzB2Fh1MK6ENA81oG1w0Pq" />
+            <Link Id="OYYKByB6X4gMMhB1VBM2Mj" Ids="QmDZKfa5Ih4OV3cuGIErPI,CPbhcn4Kt0xQAJ14kyERwC" IsHidden="true" />
+            <Link Id="IGPPovdGMkbMfeZkxcGLXA" Ids="PKHMlO2pHfZLiOLY8DaOUh,QCUcySrkQyhOhADLAXCIVV" />
+            <Link Id="JuDWtWBPUUGNWnsxyLzsyZ" Ids="PKHMlO2pHfZLiOLY8DaOUh,OUluTZAS7RoLIrFuIkf3Gp" />
+            <Link Id="VlHuVO37lnmM5Kyx1UvMHM" Ids="PKHMlO2pHfZLiOLY8DaOUh,Mkcuboo7yAdNgOyhEj0CE1" />
           </Patch>
         </Node>
         <!--
@@ -13465,6 +13449,24 @@
           <ProcessDefinition Id="TJsUay4Z4nALkTTTjU13Lp" IsHidden="true" />
         </Patch>
       </Node>
+      <!--
+
+    ************************ SubsamplingMode ************************
+
+-->
+      <Node Name="SubsamplingMode" Bounds="603,338" Id="JmWCb06iEilNZpnvkTGNRO">
+        <p:NodeReference>
+          <Choice Kind="ForwardRecordDefinition" Name="Immutable Forward" />
+          <CategoryReference Kind="Category" Name="Primitive" />
+        </p:NodeReference>
+        <p:TypeAnnotation LastCategoryFullName="uEye.Defines" LastDependency="uEyeDotNet.dll">
+          <Choice Kind="TypeFlag" Name="SubsamplingMode" />
+        </p:TypeAnnotation>
+        <Patch Id="DgeNSS7ei2yO3TE2tOhDnl">
+          <Canvas Id="OxMrxn0BnruORN7DOy2JWf" BordersChecked="false" CanvasType="Group" />
+          <ProcessDefinition Id="SFCReLS3c9PMWLZNzdfy2C" IsHidden="true" />
+        </Patch>
+      </Node>
     </Canvas>
     <!--
 
@@ -13493,5 +13495,4 @@
   <PlatformDependency Id="U6NY53eTauUPfxJdRwD1M0" Location="System.Windows.Forms" />
   <PlatformDependency Id="J9XmfmDD72vPyFd96edhTR" Location="mscorlib" />
   <PlatformDependency Id="IJHnB3vcfovPocNLhvIxNG" Location="./lib/netstandard2.0/uEyeExtensions.dll" IsForward="true" />
-  <NugetDependency Id="R765vFkMtAXNPCF9h9RdNB" Location="VL.HDE" Version="2024.6.0-0051-g4a27da6296" />
 </Document>
